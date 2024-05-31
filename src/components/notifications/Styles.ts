@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Notification, {NotificationProps} from "./Notification";
-import {StyledButton} from "../Styles";
+import {StyledButton} from "../Button/Styles";
+import { NotificationProps } from '../../@types/Notification';
 
 export const StyledNotification = styled.div<NotificationProps >`
     display: flex;

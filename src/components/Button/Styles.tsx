@@ -8,11 +8,21 @@ interface StyledButtonProps {
   fontFamily?: string;
 }
 
+interface TextProps {
+  fontSize?: string;
+  fontFamily?: string;
+}
+
+export const Text = styled.span<TextProps>`
+  font-size: ${props => props.fontSize || '16px'};
+  font-family: ${props => props.fontFamily || 'inherit'};
+  margin: 0 5px;
+`;
+
 export const StyledButton = styled.button<StyledButtonProps>`
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
-  font-size: ${props => props.fontSize || '16px'};
-  font-family: ${props => props.fontFamily || 'inherit'};
+
 
   display: flex;
   align-items: center;
@@ -43,9 +53,6 @@ export const Image = styled.img`
   margin: 0 5px;
 `;
 
-export const Text = styled.span`
-  margin: 0 5px;
-`;
 
 export const Tooltip = styled.span`
   position: absolute;

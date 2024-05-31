@@ -4,7 +4,7 @@ import ButtonImage from './ButtonImage';
 import ButtonText from './ButtonText';
 import ButtonTooltip from './ButtonTooltip';
 
-interface ButtonProps {
+export interface ButtonProps {
   children: React.ReactNode;
   reverse?: boolean;
   onClick?: () => void;
@@ -12,11 +12,12 @@ interface ButtonProps {
   height?: string;
   fontSize?: string;
   fontFamily?: string;
+
 }
 
 const Button: React.FC<ButtonProps> & {
   Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>;
-  Text: React.FC<{ children: React.ReactNode }>;
+  Text: React.FC<{ fontSize?:string, fontFamily?:string, children: React.ReactNode }>;
   Tooltip: React.FC<{ children: React.ReactNode }>;
 } = ({ reverse, onClick, children, width, height, fontSize }) => {
   return (

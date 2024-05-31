@@ -4,15 +4,8 @@ import NotificationText from './NotificationText';
 import NotificationTooltip from './NotificationTooltip';
 import NotificationClose from "./NotificationClose";
 import {StyledNotification} from "./Styles";
+import { NotificationProps } from '../../@types/Notification';
 
-export interface NotificationProps {
-    children: React.ReactNode;
-    onClick?: () => void;
-    width?: string;
-    height?: string;
-    fontSize?: string;
-    fontFamily?: string;
-}
 
 const Notification: React.FC<NotificationProps> & {
     Icon: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>;
