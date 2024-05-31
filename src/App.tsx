@@ -9,6 +9,8 @@ function App() {
   const [showNotification, setShowNotification] = useState(false);
 
   return (
+    
+    
     <div>
       <Button onClick={() => setShowNotification(true)}>
         <Button.Text>Mostrar notificação</Button.Text>
