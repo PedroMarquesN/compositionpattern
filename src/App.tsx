@@ -12,34 +12,42 @@ function App() {
   const [showNotification, setShowNotification] = useState(false);
 
   return (
-    <div>
-      <div  className="flex center w-96 bg-gray-200">
-      <div className="bg-zinc-300 font-medium dark:bg-zinc-950 px-5 py-2 text-sm text-zinc-500 dark:text-zinc-400">Recentes</div>
-      <NewNotification.Root>
-        <NewNotification.Icon icon={Rocket} />
-        <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
-        <NewNotification.Actions>
-          <NewNotification.Action icon={X} />
-        </NewNotification.Actions>
-      </NewNotification.Root>
+    <div className="h-screen bg-gray-800">
 
-      <NewNotification.Root>
-        <NewNotification.Icon icon={Rocket} />
-        <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
-        <NewNotification.Actions>
-          <NewNotification.Action icon={Check} className="bg-emerald-500 dark:bg-emerald-500" />
-        </NewNotification.Actions>
-      </NewNotification.Root>
+      <div className="flex flex-col items-center justify-center space-y-1">
 
-      <NewNotification.Root>
-        <NewNotification.Icon icon={Rocket} />
-        <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
-        <NewNotification.Actions>
-          <NewNotification.Action icon={X}/>
-          <NewNotification.Action icon={Check} className="bg-violet-500 hover:bg-violet-600 dark:bg-violet-500"/>
-        </NewNotification.Actions>
-      </NewNotification.Root>
+      <div className="rounded w-1/2 text-xl bg-zinc-400 font-medium dark:bg-zinc-950 px-5 py-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Recentes
+      </div>
+        <NewNotification.Root>
+          <NewNotification.Icon icon={Rocket}/>
+          <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
+          <NewNotification.Actions>
+            <NewNotification.Action icon={X} />
+          </NewNotification.Actions>
+        </NewNotification.Root>
 
+        <NewNotification.Root >
+          <NewNotification.Icon icon={Rocket}/>
+          <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
+          <NewNotification.Actions>
+            <NewNotification.Action icon={Check} className="bg-emerald-500 dark:bg-emerald-500" />
+          </NewNotification.Actions>
+        </NewNotification.Root>
+
+        <NewNotification.Root >
+          <NewNotification.Icon icon={Rocket}/>
+          <NewNotification.Content text="Você recebeu um convite para fazer parte da ACTION !" />
+          <NewNotification.Actions>
+            <NewNotification.Action icon={X} />
+            <NewNotification.Action icon={Check} className="bg-violet-500 hover:bg-violet-600 dark:bg-violet-500" />
+          </NewNotification.Actions>
+        </NewNotification.Root>
+
+        <NewNotification.Root>
+          <NewNotification.Icon icon={Rocket}/>
+          <NewNotification.Content text="Action está com Promoção"/>
+        </NewNotification.Root>
       </div>
 
       <Button onClick={() => setShowNotification(true)}>
