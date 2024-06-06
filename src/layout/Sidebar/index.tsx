@@ -1,9 +1,8 @@
-// Sidebar.tsx
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiHome, FiSettings } from 'react-icons/fi';
-import ArrowLeftDouble from '../../assets/ArrowLeftDouble.svg'; 
-import ArrowRightDouble from '../../assets/ArrowRightDouble.svg'; 
+import { ArrowLeftIcon, ArrowRightIcon } from '../../assets/arrows';
+import Topx from '../Topside';
 
 const SidebarContainer = styled.div<{ open: boolean }>`
   position: fixed;
@@ -90,12 +89,6 @@ const MenuItem = styled.div<{ open: boolean }>`
   }
 `;
 
-const DoubleArrowIcon = styled.div<{ open: boolean }>`
-  width: 24px;
-  height: 24px;
-  background: ${({ open }) => (open ? `url(${ArrowRightDouble})` : `url(${ArrowLeftDouble})`)};  background-size: cover;
-`;
-
 const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
@@ -112,7 +105,7 @@ const Sidebar: React.FC = () => {
         </MenuItem>
       </SidebarContainer>
       <IconContainer open={open} onClick={() => setOpen(!open)}>
-        <DoubleArrowIcon open={open} />
+        {open ? <ArrowRightIcon /> : <ArrowLeftIcon />}
       </IconContainer>
     </>
   );
