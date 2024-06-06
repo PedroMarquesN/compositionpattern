@@ -34,6 +34,7 @@ const IconContainer = styled.div<{ open: boolean }>`
   align-items: center;
   height: 50px;
   width: 50px;
+  background-color: #444;
   color: #fff;
   cursor: pointer;
   transition: left 0.3s;
@@ -80,7 +81,7 @@ const MenuItem = styled.div<{ open: boolean }>`
 
   @media (min-width: 769px) {
     span {
-      display: inline;
+      display: ${({ open }) => (open ? 'inline' : 'none')};
     }
   }
 `;
