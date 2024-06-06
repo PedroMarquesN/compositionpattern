@@ -34,10 +34,10 @@ const IconContainer = styled.div<{ open: boolean }>`
   align-items: center;
   height: 50px;
   width: 50px;
-  background-color: #444;
   color: #fff;
   cursor: pointer;
   transition: left 0.3s;
+  margin-left: -20px;
 
   @media (max-width: 480px) {
     left: ${({ open }) => (open ? '250px' : '0')};
