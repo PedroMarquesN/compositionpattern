@@ -97,6 +97,8 @@ const MenuItem = styled.div<{ open: boolean }>`
     }
   }
 `;
+
+
 interface SidebarProps {
   open: boolean,
   onToggle: () => void

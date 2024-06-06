@@ -7,18 +7,19 @@ interface NavbarProps {
 }
 
 export const NavbarContainer = styled.div<NavbarProps>`
+
+  display: flex;
   background-color: #333;
-  height: 80px;
+  height: 9rem;
   width: 100%;
+  
 
 `;
 
 
 
 export const Logo = styled.img`
-  background-image: url(${LogoImg});
   width: 130px;
-  height: ${({ theme }) => theme.space[10]};
+  margin: 0 auto;
 `;
-
 
