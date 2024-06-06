@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiHome, FiSettings } from 'react-icons/fi';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../assets/arrows';
-import Topx from '../Topside';
+import { itemsMenu } from './itemsMenu';
 
 const SidebarContainer = styled.div<{ open: boolean }>`
   position: fixed;
@@ -54,22 +54,30 @@ const MenuItem = styled.div<{ open: boolean }>`
   padding: 10px;
   transition: padding 0.3s;
   width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #bbb7b7;
+  }
   svg {
     margin-right: ${({ open }) => (open ? '10px' : '0')};
+    transition: margin-right 0.3s; 
   }
   span {
     display: ${({ open }) => (open ? 'inline' : 'none')};
   }
 
   @media (max-width: 768px) {
-    justify-content: center;
+    justify-content: flex-start; 
     padding: 10px 0;
+    margin-top: 1rem;
     svg {
       margin-right: 0;
     }
   }
 
   @media (max-width: 480px) {
+    margin-top: 5rem;
     span {
       display: ${({ open }) => (open ? 'inline' : 'none')};
     }
@@ -77,8 +85,9 @@ const MenuItem = styled.div<{ open: boolean }>`
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
+    
     span {
-      display: none;
+      display: inline;
     }
   }
 
@@ -95,14 +104,12 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <SidebarContainer open={open}>
-        <MenuItem open={open}>
-          <FiHome size={24} />
-          <span>Home</span>
-        </MenuItem>
-        <MenuItem open={open}>
-          <FiSettings size={24} />
-          <span>Settings</span>
-        </MenuItem>
+        {itemsMenu.map((item, index) => (
+          <MenuItem key={index} open={open}>
+            <item.icon size={24} />
+            <span>{item.label}</span>
+          </MenuItem>
+        ))}
       </SidebarContainer>
       <IconContainer open={open} onClick={() => setOpen(!open)}>
         {open ? <ArrowRightIcon /> : <ArrowLeftIcon />}

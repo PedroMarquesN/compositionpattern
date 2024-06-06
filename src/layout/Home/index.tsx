@@ -5,10 +5,7 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  flex: 1;
-  margin-top: 57px;
   transition: margin-left 0.3s ease;
-  padding: ${({ theme }) => theme.space[4]};
   margin-left: 250px;
 `;
 
