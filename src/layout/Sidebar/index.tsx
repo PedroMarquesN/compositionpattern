@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import styled from 'styled-components';
 import { FiHome, FiSettings } from 'react-icons/fi';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../assets/arrows';
@@ -97,13 +97,15 @@ const MenuItem = styled.div<{ open: boolean }>`
     }
   }
 `;
+interface SidebarProps {
+  open: boolean,
+  onToggle: () => void
+}
 
-const Sidebar: React.FC = () => {
-  const [open, setOpen] = useState(false);
-
+const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
   return (
     <>
-      <SidebarContainer open={open}>
+      <SidebarContainer open={open} onClick={onToggle}>
         {itemsMenu.map((item, index) => (
           <MenuItem key={index} open={open}>
             <item.icon size={24} />
@@ -111,7 +113,7 @@ const Sidebar: React.FC = () => {
           </MenuItem>
         ))}
       </SidebarContainer>
-      <IconContainer open={open} onClick={() => setOpen(!open)}>
+      <IconContainer open={open} onClick={onToggle}>
         {open ? <ArrowRightIcon /> : <ArrowLeftIcon />}
       </IconContainer>
     </>
