@@ -3,11 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiArrowLeft, FiArrowRight, FiHome, FiSettings } from 'react-icons/fi';
 
-
-interface SidebarProps {
-    open: boolean;
-  }
-
 const SidebarContainer = styled.div<{ open: boolean }>`
   position: fixed;
   top: 0;
@@ -16,30 +11,35 @@ const SidebarContainer = styled.div<{ open: boolean }>`
   width: ${({ open }) => (open ? '250px' : '50px')};
   background-color: #333;
   transition: width 0.3s;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px; /* adjust padding to make space for the toggle icon */
+  padding-top: 60px;
+
+  @media (max-width: 480px) {
+    width: ${({ open }) => (open ? '250px' : '0')};
+    padding-top: 0;
+  }
 `;
 
-const IconContainer = styled.div<SidebarProps>`
+const IconContainer = styled.div<{ open: boolean }>`
   position: fixed;
   top: 50%;
-  left: ${({ open }: { open: boolean }) => (open ? '250px' : '50px')};
+  left: ${({ open }) => (open ? '250px' : '50px')};
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   width: 50px;
-  background-color: #444;
   color: #fff;
   cursor: pointer;
   transition: left 0.3s;
 
-  @media (max-width: 768px) {
-    left: 50px;
+  @media (max-width: 480px) {
+    left: ${({ open }) => (open ? '250px' : '0')};
   }
 `;
 
@@ -67,13 +67,26 @@ const MenuItem = styled.div<{ open: boolean }>`
 
   @media (max-width: 480px) {
     span {
+      display: ${({ open }) => (open ? 'inline' : 'none')};
+    }
+    ${({ open }) => !open && 'display: none;'}
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    span {
       display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    span {
+      display: inline;
     }
   }
 `;
 
 const Sidebar: React.FC = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
