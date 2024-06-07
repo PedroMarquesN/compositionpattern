@@ -17,10 +17,10 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   overflow: hidden;
   z-index: 1000;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
     width: 200px;
-    padding-top: 0;
+    padding-top: 5rem;
   }
 `;
 
@@ -61,7 +61,7 @@ export const IconContainer = styled.div<{ open: boolean }>`
   margin-left: -20px;
   z-index: 1001; 
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     margin-left: -10px;
     left: ${({ open }) => (open ? '200px' : '0')};
   }
@@ -102,10 +102,6 @@ const mediaQueries = css<{ open: boolean }>`
   }
 
   @media (max-width: 480px) {
-    &:nth-child(1) {
-      margin-top: 7rem;
-    }
-
     ${({ open }) => !open && `
       justify-content: center;
     `}
