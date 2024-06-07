@@ -7,9 +7,9 @@ import { Container, StyledCountCard } from './style';
 const CardContainer: React.FC = () => {
   return (
     <Container>
-      <StyledCountCard name='Habilidades:' value={30} animation='+' /> 
+      <StyledCountCard name='Habilidades:' value={130} animation='+' /> 
       <StyledCountCard name='Estress:' value={17} animation='+'/> 
-      <StyledCountCard name='Felicidade:' value={90} animation='-'/> 
+      <StyledCountCard name='Felicidade:' value={34} animation='-'/> 
     </Container>
   );
 };

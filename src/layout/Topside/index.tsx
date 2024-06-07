@@ -1,18 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { LogoComponent } from './Logo';
 import { Dropdown, NavbarContainer, ProfileIcon } from './style';
+import { NavbarProps } from '../../@types/Navbar';
 
 
-
-
-
-
-interface NavbarProps {
-  children: ReactNode;
-  profileIconSrc: string;
-  dropdownContent: ReactNode;
-  Logo: string;
-}
 
 const Navbar: React.FC<NavbarProps> = ({ children, profileIconSrc, dropdownContent, Logo }) => {
   return (

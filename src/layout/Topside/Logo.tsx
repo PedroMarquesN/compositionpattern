@@ -1,10 +1,6 @@
-import styled from "styled-components";
-
-const Logo = styled.img`
-  width: 100px;
-  z-index: 99999999;
-`;
+import { LogoNav } from "./style";
 
 
 
-export const LogoComponent: React.FC<{ src: string }> = ({ src }) => <Logo src={src} alt="Logo" />;
+
+export const LogoComponent: React.FC<{ src: string }> = ({ src }) => <LogoNav src={src} alt="Logo" />;

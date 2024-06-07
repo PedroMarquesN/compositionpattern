@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "../../assets/arrows";
 import { IconContainer } from "./style";
 import { SidebarIconProps } from "../../@types/Sidebar";
-import { FiCloudDrizzle, FiFeather } from "react-icons/fi";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 

@@ -3,7 +3,7 @@ import SidebarIcon from "./SidebarIcon";
 import SidebarMenu from "./SidebarMenu";
 import { Overlay } from "./style";
 
-const Sisdebar: React.FC<SidebarProps> & {
+const NewSidebar: React.FC<SidebarProps> & {
     Menu: React.FC<{ open: boolean }>,
     Icon: React.FC<{ open: boolean, onClick: () => void }>
 } = ({ open, onToggle }) => {
@@ -16,7 +16,7 @@ const Sisdebar: React.FC<SidebarProps> & {
   );
 };
 
-Sisdebar.Menu = SidebarMenu;
-Sisdebar.Icon = SidebarIcon;
+NewSidebar.Menu = SidebarMenu;
+NewSidebar.Icon = SidebarIcon;
 
-export default Sisdebar;
+export default NewSidebar;

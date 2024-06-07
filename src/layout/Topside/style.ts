@@ -2,9 +2,12 @@ import styled from 'styled-components';
 
 import LogoImg from '../../assets/logo.png';
 
-interface NavbarProps {
-  
-}
+
+export const LogoNav = styled.img`
+  width: 100px;
+  z-index: 99999999;
+`;
+
 
 export const NavbarContainer = styled.nav`
   background-color: #333;
