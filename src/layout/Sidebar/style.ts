@@ -15,11 +15,11 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   justify-content: flex-start;
   padding-top: 60px;
   overflow: hidden;
-  z-index: 1000; /* Ensure the sidebar is on top of the overlay */
+  z-index: 1000;
 
   @media (max-width: 480px) {
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
-    width: 250px;
+    width: 200px;
     padding-top: 0;
   }
 `;
@@ -46,6 +46,7 @@ export const Overlay = styled.div<{ open: boolean }>`
 `;
 export const IconContainer = styled.div<{ open: boolean }>`
   position: fixed;
+  font-size: 10rem;
   top: 50%;
   left: ${({ open }) => (open ? '250px' : '50px')};
   transform: translateY(-50%);
@@ -61,7 +62,8 @@ export const IconContainer = styled.div<{ open: boolean }>`
   z-index: 1001; 
 
   @media (max-width: 480px) {
-    left: ${({ open }) => (open ? '250px' : '0')};
+    margin-left: -10px;
+    left: ${({ open }) => (open ? '200px' : '0')};
   }
 `;
 
