@@ -4,13 +4,9 @@ import { FiHome, FiSettings } from 'react-icons/fi';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../assets/arrows';
 import { itemsMenu } from './itemsMenu';
 import { IconContainer, MenuItem, SidebarContainer } from './style';
+import { SidebarProps } from '../../@types/Sidebar';
 
 
-
-interface SidebarProps {
-  open: boolean,
-  onToggle: () => void
-}
 
 const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
   return (

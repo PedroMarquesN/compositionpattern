@@ -2,10 +2,8 @@ import { FC } from "react";
 import { itemsMenu } from "./itemsMenu";
 import SidebarItem from "./SidebarItem";
 import { SidebarContainer } from "./style";
+import { SidebarMenuProps } from "../../@types/Sidebar";
 
-interface SidebarMenuProps {
-  open: boolean;
-}
 
 const SidebarMenu:FC<SidebarMenuProps> = ({ open }) => (
     <SidebarContainer open={open}>
