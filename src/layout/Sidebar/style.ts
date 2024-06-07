@@ -46,7 +46,7 @@ export const Overlay = styled.div<{ open: boolean }>`
 `;
 export const IconContainer = styled.div<{ open: boolean }>`
   position: fixed;
-  font-size: 10rem;
+  font-size: 2rem;
   top: 50%;
   left: ${({ open }) => (open ? '250px' : '50px')};
   transform: translateY(-50%);
