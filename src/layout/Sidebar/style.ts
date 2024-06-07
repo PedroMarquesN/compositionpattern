@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const SidebarContainer = styled.div<{ open: boolean }>`
   position: fixed;
@@ -43,7 +43,7 @@ export const IconContainer = styled.div<{ open: boolean }>`
   }
 `;
 
-export const MenuItem = styled.div<{ open: boolean }>`
+const baseStyles = css<{ open: boolean }>`
   display: flex;
   align-items: center;
   color: #fff;
@@ -55,41 +55,65 @@ export const MenuItem = styled.div<{ open: boolean }>`
   &:hover {
     background-color: #bbb7b7;
   }
-  svg {
-    margin-right: ${({ open }) => (open ? '10px' : '0')};
-    transition: margin-right 0.3s; 
-  }
-  span {
-    display: ${({ open }) => (open ? 'inline' : 'none')};
-  }
+`;
 
+const svgStyles = css<{ open: boolean }>`
+  margin-right: 10px;
+  transition: margin-right 0.3s;
+`;
+
+const spanStyles = css<{ open: boolean }>`
+  display: ${({ open }) => (open ? 'inline' : 'none')};
+`;
+
+const mediaQueries = css<{ open: boolean }>`
   @media (max-width: 768px) {
-    justify-content: flex-start; 
+    justify-content: flex-start;
     padding: 10px 0;
     margin-top: 1rem;
+
     svg {
-      margin-right: 0;
+      margin-right: ${({ open }) => (open ? '10px' : '10px')}; // Ajuste para manter o ícone visível
     }
   }
 
   @media (max-width: 480px) {
-    margin-top: 5rem;
-    span {
-      display: ${({ open }) => (open ? 'inline' : 'none')};
+    &:nth-child(1) {
+      margin-top: 7rem;
     }
-    ${({ open }) => !open && 'display: none;'}
-  }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-    
-    span {
-      display: inline;
-    }
+    ${({ open }) => !open && `
+      justify-content: center;
+    `}
   }
 
   @media (min-width: 769px) {
-    span {
-      display: ${({ open }) => (open ? 'inline' : 'none')};
+    justify-content: flex-end;
+    svg {
+      margin-left: 10px;
+      margin-right: 0;
     }
   }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    justify-content: flex-end;
+    span {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+  }
+`;
+
+export const MenuItem = styled.div<{ open: boolean }>`
+  ${baseStyles}
+
+  svg {
+    ${svgStyles}
+  }
+
+  span {
+    ${spanStyles}
+  }
+
+  ${mediaQueries}
 `;
