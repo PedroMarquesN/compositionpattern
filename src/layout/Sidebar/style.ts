@@ -15,6 +15,7 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   justify-content: flex-start;
   padding-top: 60px;
   overflow: hidden;
+  z-index: 1000; /* Ensure the sidebar is on top of the overlay */
 
   @media (max-width: 480px) {
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
@@ -23,6 +24,26 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   }
 `;
 
+export const Overlay = styled.div<{ open: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 999; 
+
+  @media (max-width: 768px) {
+    backdrop-filter: blur(3px); 
+  }
+
+  @media (min-width: 769px) {
+    display: none; 
+  }
+`;
 export const IconContainer = styled.div<{ open: boolean }>`
   position: fixed;
   top: 50%;
@@ -37,6 +58,7 @@ export const IconContainer = styled.div<{ open: boolean }>`
   cursor: pointer;
   transition: left 0.3s, margin-left 0.3s;
   margin-left: -20px;
+  z-index: 1001; 
 
   @media (max-width: 480px) {
     left: ${({ open }) => (open ? '250px' : '0')};

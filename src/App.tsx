@@ -20,8 +20,7 @@ function App() {
   return (
     <>
     <Navbar />
-    <Sisdebar.Menu open={sidebarOpen} />
-    <Sisdebar.Icon open={sidebarOpen} onClick={handleSidebarClick} />
+    <Sisdebar open={sidebarOpen} onToggle={handleSidebarClick} />
     <ContentContainer open={sidebarOpen} />
   </>
 
