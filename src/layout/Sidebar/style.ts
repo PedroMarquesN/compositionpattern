@@ -73,7 +73,7 @@ const mediaQueries = css<{ open: boolean }>`
     margin-top: 1rem;
 
     svg {
-      margin-right: ${({ open }) => (open ? '10px' : '10px')}; // Ajuste para manter o ícone visível
+      margin-right: 10px;
     }
   }
 
@@ -87,19 +87,29 @@ const mediaQueries = css<{ open: boolean }>`
     `}
   }
 
-  @media (min-width: 769px) {
-    justify-content: flex-end;
+  @media (min-width: 481px) and (max-width: 768px) {
+    justify-content: ${({ open }) => (open ? 'flex-start' : 'flex-end')};
+
+    span {
+      display: ${({ open }) => (open ? 'inline' : 'none')};
+    }
+
     svg {
-      margin-left: 10px;
-      margin-right: 0;
+      margin-right: 10px;
+      margin-left: 0;
     }
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-    justify-content: flex-end;
+  @media (min-width: 769px) {
+    justify-content: ${({ open }) => (open ? 'flex-start' : 'flex-end')};
+
+    svg {
+      margin-left: ${({ open }) => (open ? '0' : '10px')};
+      margin-right: ${({ open }) => (open ? '10px' : '0')};
+    }
+
     span {
-      margin-left: 10px;
-      margin-right: 0;
+      display: ${({ open }) => (open ? 'inline' : 'none')};
     }
   }
 `;
