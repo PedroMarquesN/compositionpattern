@@ -1,5 +1,6 @@
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
 import styled from "styled-components";
+import CountCard from "./CountCard";
 
 export const CardContainer = styled.div`
   display: flex;
@@ -52,4 +53,38 @@ export const ArrowDownIcon = styled(FiArrowDown)`
   font-size: 2.5rem;
   position: absolute;
   bottom: -30px;
+`;
+
+export const PlusSign = styled.span<{animation:string}>`
+  color: ${props => props.animation === '+' ? "#00ff7f" : '#ff0000'};
+  font-size: 2.5rem;
+  font-weight: 700;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 5rem;
+  margin-right: 100px;
+  width: 100%;
+
+  @media(max-width: 490px){
+    margin-right: 35rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+  
+`;
+
+export const StyledCountCard = styled(CountCard)`
+  width: 100%;
 `;

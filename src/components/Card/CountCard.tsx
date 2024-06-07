@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { FiArrowUp, FiArrowDown } from 'react-icons/fi';
-import { Ball, CardContainer, Name } from './style';
+import { Ball, CardContainer, Name, PlusSign } from './style';
 import { ArrowDownIcon, ArrowUpIcon } from 'lucide-react';
 
 interface CountCardProps {
   value: number;
   name: string;
+  animation:string;
 }
 
 
 
 
 
-const CountCard: React.FC<CountCardProps> = ({ value, name }) => {
+const CountCard: React.FC<CountCardProps> = ({ value, name ,animation}) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -46,9 +45,10 @@ const CountCard: React.FC<CountCardProps> = ({ value, name }) => {
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
       >
+        <PlusSign animation={animation}>{animation}</PlusSign>
         {count}%
         {increase && <ArrowUpIcon />}
-        {decrease && <ArrowDownIcon />} {/* Usar a seta para baixo quando há diminuição */}
+        {decrease && <ArrowDownIcon />}
       </Ball>
     </CardContainer>
   );
