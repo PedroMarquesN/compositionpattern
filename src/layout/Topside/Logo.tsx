@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Logo = styled.img`
   width: 100px;
+  z-index: 99999999;
 `;
 
 

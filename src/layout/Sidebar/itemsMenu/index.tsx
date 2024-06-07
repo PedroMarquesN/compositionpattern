@@ -13,7 +13,7 @@ export const itemsMenu = [
     },
     {
         icon: FiScissors,
-        label:"aa",
+        label:"Arrecadação",
         url:'/'
     }
 ]
