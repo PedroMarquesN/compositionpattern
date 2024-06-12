@@ -18,8 +18,7 @@ function App() {
   return (
     <>
     <Navbar Logo={ImagemLogo} 
-    children=
-    {<div />} 
+    children={<div />} 
     profileIconSrc="default_icon_src.png" 
     dropdownContent=
     {<div />} />

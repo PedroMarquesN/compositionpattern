@@ -7,7 +7,7 @@ import { IconContainer, MenuItem, SidebarContainer } from './style';
 import { SidebarProps } from '../../@types/Sidebar';
 
 
-
+// Para Maqson verificar qual dos dois mais viável
 const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
   return (
     <>

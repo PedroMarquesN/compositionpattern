@@ -11,7 +11,7 @@ const SidebarIcon: FC<SidebarIconProps> = ({ open, onClick }) => (
     <IconContainer open={open} onClick={onClick}>
       {open ? <MdKeyboardDoubleArrowLeft /> : <MdKeyboardDoubleArrowRight />}
     </IconContainer>
-  );
+);
 
 
 export default SidebarIcon

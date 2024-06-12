@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { SidebarMenuProps } from '../../@types/Sidebar';
 
-export const SidebarContainer = styled.div<{ open: boolean }>`
+export const SidebarContainer = styled.div<SidebarMenuProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +25,7 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   }
 `;
 
-export const Overlay = styled.div<{ open: boolean }>`
+export const Overlay = styled.div<SidebarMenuProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -44,7 +45,7 @@ export const Overlay = styled.div<{ open: boolean }>`
     display: none; 
   }
 `;
-export const IconContainer = styled.div<{ open: boolean }>`
+export const IconContainer = styled.div<SidebarMenuProps>`
   position: fixed;
   font-size: 2rem;
   top: 50%;
@@ -67,7 +68,7 @@ export const IconContainer = styled.div<{ open: boolean }>`
   }
 `;
 
-const baseStyles = css<{ open: boolean }>`
+const baseStyles = css<SidebarMenuProps>`
   display: flex;
   align-items: center;
   color: #fff;
@@ -81,16 +82,16 @@ const baseStyles = css<{ open: boolean }>`
   }
 `;
 
-const svgStyles = css<{ open: boolean }>`
+const svgStyles = css<SidebarMenuProps>`
   margin-right: 10px;
   transition: margin-right 0.3s;
 `;
 
-const spanStyles = css<{ open: boolean }>`
+const spanStyles = css<SidebarMenuProps>`
   display: ${({ open }) => (open ? 'inline' : 'none')};
 `;
 
-const mediaQueries = css<{ open: boolean }>`
+const mediaQueries = css<SidebarMenuProps>`
   @media (max-width: 768px) {
     justify-content: flex-start;
     padding: 10px 0;
@@ -134,7 +135,7 @@ const mediaQueries = css<{ open: boolean }>`
   }
 `;
 
-export const MenuItem = styled.div<{ open: boolean }>`
+export const MenuItem = styled.div<SidebarMenuProps>`
   ${baseStyles}
 
   svg {

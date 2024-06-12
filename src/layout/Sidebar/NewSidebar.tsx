@@ -1,11 +1,11 @@
-import { SidebarProps } from "../../@types/Sidebar";
+import { SidebarIconProps, SidebarProps } from "../../@types/Sidebar";
 import SidebarIcon from "./SidebarIcon";
 import SidebarMenu from "./SidebarMenu";
 import { Overlay } from "./style";
 
 const NewSidebar: React.FC<SidebarProps> & {
-    Menu: React.FC<{ open: boolean }>,
-    Icon: React.FC<{ open: boolean, onClick: () => void }>
+    Menu: React.FC<SidebarIconProps>,
+    Icon: React.FC<SidebarIconProps>
 } = ({ open, onToggle }) => {
   return (
     <>
