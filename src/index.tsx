@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <MyThemeProvider>
-      <App />
+    <App />
   </MyThemeProvider>
 
   

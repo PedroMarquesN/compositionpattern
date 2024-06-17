@@ -1,8 +1,8 @@
 import { createContext, FC, useContext, useEffect, useState } from "react";
-import { AuthContextProps, AuthProviderProps } from "../../@types/AuthProvider";
+
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { isContext } from "vm";
+import { AuthContextProps, AuthProviderProps } from "../@types/AuthProvider";
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 

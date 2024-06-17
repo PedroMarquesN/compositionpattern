@@ -1,17 +1,21 @@
-import Dashboard from "./pages/Dashboard";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './AuthProvider';
+import Login from './pages/Login';
+import ProtectedRoute from './Route/ProtectedRoute';
+import Dashboard from './pages/Dashboard';
 
-
-
- 
-function App() {
-
-
-
-
+const App: React.FC = () => {
   return (
-    <Dashboard />
-
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
-}
+};
 
 export default App;
