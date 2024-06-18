@@ -1,23 +1,30 @@
-import React, { FC } from 'react'
-import { CardUser, PerfilImg } from './style'
+import React, { FC } from "react";
+import { CardUser, DataUser, DataUserContainer, ImageUser, PerfilImg } from "./style";
+import ImageUserAsset from "../../../assets/Vector.png";
 
-
-const CardUserContainer: FC = () => {
-    return (
-        <CardUser>
-            <PerfilImg>
-                <img src="https://avatars.githubusercontent.com/u/70394040?v=4" alt="Perfil" style={{ width: "100%", height: "100%", borderRadius: "50%" }} />
-            </PerfilImg>
-            <div>
-                <label>Usuário:</label>
-                <p>MarquesDev</p>
-            </div>
-            <div>
-                <label>Perfil de Acesso:</label>
-                <p>Administrador</p>
-            </div>
-        </CardUser>
-    )
+interface CardUserContainerProps {
+  username: string;
+  accessLevel: string;
 }
 
-export default CardUserContainer
+const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }) => {
+  return (
+    <CardUser>
+      <PerfilImg>
+        <ImageUser src={ImageUserAsset} alt="Perfil" />
+      </PerfilImg>
+      <DataUserContainer>
+        <DataUser>
+          <label>Usuário:</label>
+          <p>{username}</p>
+        </DataUser>
+        <DataUser>
+          <label>Perfil de Acesso:</label>
+          <p>{accessLevel}</p>
+        </DataUser>
+      </DataUserContainer>
+    </CardUser>
+  );
+};
+
+export default CardUserContainer;
