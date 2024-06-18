@@ -4,6 +4,7 @@ import { useAuth } from '../../AuthProvider';
 import { useNavigate} from 'react-router-dom'
 import { Button, ContainerLogin, DivContainer, FormContainer, FormImg, ImgLogo, InputContainer } from './styles';
 import LogoSafra from '../../assets/logoSafra.png'
+import { FaEye, FaUser } from 'react-icons/fa';
 
 interface IFormInput {
   username: string;
@@ -31,6 +32,7 @@ const LoginForm: React.FC = () => {
           type="text"
         />
         {errors.username && <p>{errors.username.message}</p>}
+        <FaUser />
       </InputContainer>
       <InputContainer>
         <label>Senha: </label>
@@ -39,7 +41,9 @@ const LoginForm: React.FC = () => {
           type="password"
         />
         {errors.password && <p>{errors.password.message}</p>}
+        <FaEye />
       </InputContainer>
+      <a href='#'>Esqueçeu a senha ?</a>
       <Button type="submit">Acessar Portal</Button>
     </FormContainer>
       </DivContainer>

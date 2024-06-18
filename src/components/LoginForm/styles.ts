@@ -13,6 +13,11 @@ export const FormContainer = styled.form`
     justify-content: center;
     align-items: center;
     margin-top: 7rem;
+
+    a{
+        text-decoration: none;
+        margin-left: 22rem;
+    }
 `
 
 export const FormImg = styled.img`
@@ -21,6 +26,7 @@ export const FormImg = styled.img`
     //object-fit: cover;
 `
 export const InputContainer = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -40,6 +46,13 @@ export const InputContainer = styled.div`
         border: none;
         border-radius: 0.25rem;
     }
+    svg {
+        font-size: 1.5rem;
+        position: absolute;
+        right: 10px;
+        top: 75%;
+        transform: translateY(-50%);
+  }
 `
 
 export const Button = styled.button`
@@ -70,7 +83,7 @@ export const ImgLogo = styled.img`
 
 `
 
-export const DivContainer= styled.div`
+export const DivContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
