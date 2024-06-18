@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
-import LogoImg from '../../assets/logo.png';
-
 
 export const LogoNav = styled.img`
-  width: 100px;
+  max-width: 130px;
   z-index: 99999999;
 `;
 
 
 export const NavbarContainer = styled.nav`
-  background-color: #333;
+  background: linear-gradient(90deg, #97B43C 0%, #414E1A 100%);
   color: #fff;
   display: flex;
   padding-right: 1rem;

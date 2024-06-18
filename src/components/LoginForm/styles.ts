@@ -15,19 +15,29 @@ export const FormContainer = styled.form`
     margin-top: 7rem;
 
     a{
+        color: inherit;
         text-decoration: none;
         margin-left: 22rem;
     }
 `
-
-export const FormImg = styled.img`
+export const ImageContainer = styled.div`
     width: 60%;
     height: 100vh;
-    //object-fit: cover;
-`
+    border-radius: 5rem;
+    overflow: hidden; 
+    padding: 20px; // Mova o padding para aqui
+`;
+
+export const FormImg = styled.img`
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+`;
 export const InputContainer = styled.div`
     position: relative;
     display: flex;
+    margin-bottom: 2rem;
     flex-direction: column;
 
     label {
@@ -78,8 +88,8 @@ margin-top: 3rem;
 `
 
 export const ImgLogo = styled.img`
-    width:  150px;
-    height: 150px;
+    max-width: 25rem;
+    object-fit: cover;
 
 `
 

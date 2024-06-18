@@ -7,7 +7,7 @@ export const SidebarContainer = styled.div<SidebarMenuProps>`
   left: 0;
   height: 100%;
   width: 250px;
-  background-color: #333;
+  background-color: #97B43C;
   transition: transform 0.3s ease;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-200px)')};
   display: flex;
@@ -56,7 +56,7 @@ export const IconContainer = styled.div<SidebarMenuProps>`
   align-items: center;
   height: 50px;
   width: 50px;
-  color: #fff;
+  color: ${({theme}) => theme.colors.secondary};
   cursor: pointer;
   transition: left 0.3s, margin-left 0.3s;
   margin-left: -20px;

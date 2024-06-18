@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../layout/Topside";
 import NewSidebar from "../layout/Sidebar/NewSidebar";
 import ContentContainer from "../layout/Home";
-import ImagemLogo from "../assets/logo.png"
+import ImagemLogo from "../assets/logobranca.png"
 
 const Dashboard = () => {
 
