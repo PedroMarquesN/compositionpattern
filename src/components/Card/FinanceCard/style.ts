@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const CenterContainer = styled.div`
+export const FinanceCardContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    width: 94.125rem;
+    gap: ${({ theme }) => theme.space[6]};
+    padding: ${({ theme }) => theme.space[4]};
+    width: 30.3125rem;
     height: 23.8125rem;
     background-color: ${({ theme }) => theme.colors.tertiary};
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-`;
+`

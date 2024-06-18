@@ -20,7 +20,7 @@ const Dashboard = () => {
         profileIconSrc="default_icon_src.png"
         dropdownContent={<div />}
       />
-      <ContentContainer open={sidebarOpen} />
+      <ContentContainer  />
     </div>
   );
 };
