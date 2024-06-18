@@ -20,7 +20,6 @@ const Dashboard = () => {
         profileIconSrc="default_icon_src.png"
         dropdownContent={<div />}
       />
-      <NewSidebar open={sidebarOpen} onToggle={handleSidebarClick} />
       <ContentContainer open={sidebarOpen} />
     </div>
   );

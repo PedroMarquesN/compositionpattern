@@ -5,7 +5,7 @@ export const dark: DefaultTheme = {
     colors: {
       text: '#F2F4F6',
       text1: '#9ba8b0',
-      primary: '#263238',
+      primary: '#97B43C',
       secondary: '#12191D',
       ternary: 'rgb(29, 39, 44)',
   
