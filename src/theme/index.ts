@@ -7,6 +7,7 @@ export const dark: DefaultTheme = {
       text1: '#9ba8b0',
       primary: '#97B43C',
       secondary: '#12191D',
+      tertiary: '#f6f6f6',
       ternary: 'rgb(29, 39, 44)',
   
       blue: '#339af0',

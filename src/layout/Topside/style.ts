@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 export const LogoNav = styled.img`
+  margin-left: 1rem;
   max-width: 130px;
   z-index: 99999999;
 `;
