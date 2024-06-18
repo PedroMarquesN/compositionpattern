@@ -1,4 +1,4 @@
-import IconIndustrie from '../../../assets/Industrie.png';
+import IconIndustrie from '../../../../assets/Industrie.png';
 
 
 export const centerList = [
