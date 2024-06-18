@@ -65,7 +65,7 @@ export const InputContainer = styled.div`
   }
 `
 
-export const Button = styled.button`
+export const StyledButtonForm = styled.button`
 color: #FFF;
 width: 30.6875rem;
 height: 3.8125rem;

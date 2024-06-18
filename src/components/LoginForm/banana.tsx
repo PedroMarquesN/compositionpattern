@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAuth } from '../../AuthProvider';
 import { useNavigate} from 'react-router-dom'
-import { Button, ContainerLogin, DivContainer, FormContainer, FormImg, ImageContainer, ImgLogo, InputContainer } from './styles';
+import { ContainerLogin, DivContainer, FormContainer, FormImg, ImageContainer, ImgLogo, InputContainer, StyledButtonForm } from './styles';
 import LogoSafra from '../../assets/logoSafra.png'
 import { FaEye, FaUser } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ interface IFormInput {
   password: string;
 }
 
-const LoginForm: React.FC = () => {
+const BANANA: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const LoginForm: React.FC = () => {
         <FaEye />
       </InputContainer>
       <a href='#'>Esqueçeu a senha ?</a>
-      <Button type="submit">Acessar Portal</Button>
+      <StyledButtonForm type="submit">Acessar Portal</StyledButtonForm>
     </FormContainer>
       </DivContainer>
       
@@ -56,4 +56,4 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm;
+export default BANANA;
