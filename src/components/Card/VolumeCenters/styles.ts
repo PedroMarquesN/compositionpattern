@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const CenterContainer = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; 
     gap: 1.25rem;
-    width: 94.125rem;
-    height: 23.8125rem;
+    width: 100%; 
+    padding: 1.25rem; 
     background-color: ${({ theme }) => theme.colors.tertiary};
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
@@ -16,25 +15,26 @@ export const Center = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 12.125rem;
+    width: calc((100% / 9) - 1.25rem); 
     height: 12.125rem;
     background-color: ${({ theme }) => theme.colors.text};
     border-radius: 0.625rem;
+    box-sizing: border-box; 
 `;
 
 export const CenterIcon = styled.img`
-    width: 5.625rem;
-    height: 5.625rem;
+    width: 4.625rem;
+    height: 4.625rem;
 `;
 
 export const CenterCode = styled.h1`
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const CenterLocation = styled.h2`
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primary};
 `;
