@@ -20,6 +20,10 @@ export const DivIcons = styled.div`
     width: 6.25rem;
     height: 6.625rem;
     background: ${({ theme }) => theme.colors.primary};
+    &:hover {
+        scale: 1.2;
+        background-color: ${({ theme }) => theme.colors.greenHover};
+    }
 `;
 
 export const IconAndLabel = styled.div`
@@ -28,6 +32,8 @@ export const IconAndLabel = styled.div`
     align-items: center;
     width: 8rem; 
     margin-left: 0; 
+    cursor: pointer;
+
 
     &:first-child {
         margin-left: 2rem; 

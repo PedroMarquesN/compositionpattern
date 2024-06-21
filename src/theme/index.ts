@@ -4,7 +4,7 @@ export const dark: DefaultTheme = {
     title: 'dark',
     colors: {
       text: '#F2F4F6',
-      text1: '#9ba8b0',
+      text1: '#4B4545',
       primary: '#97B43C',
       secondary: '#12191D',
       tertiary: '#f6f6f6',
@@ -12,6 +12,7 @@ export const dark: DefaultTheme = {
   
       blue: '#339af0',
       blueHover: 'rgb(3, 169, 244)',
+      greenHover: '#708030',
       orange: ' rgb(255, 152, 0)',
   
       success: '#1E641D',

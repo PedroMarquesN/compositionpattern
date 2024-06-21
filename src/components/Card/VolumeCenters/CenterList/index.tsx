@@ -14,6 +14,11 @@ export const centerList = [
     },
     {
         icon:   IconIndustrie,
+        code: 'BS02',
+        Location: 'Buriti'
+    },
+    {
+        icon:   IconIndustrie,
         code: 'BS03',
         Location: 'Formosa'
     },
