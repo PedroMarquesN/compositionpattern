@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased;
   }

@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { CardNavigation, DivIcons, IconAndLabel } from "./style";
+import { CardNavigation, ContainerIcon, DivIcons } from "./style";
 import Icon1 from "../../../assets/icon1.png";
 import Icon2 from "../../../assets/icon2.png";
 import Icon3 from "../../../assets/icon3.png";
+import CardWrapper from "..";
 
 interface CardNavigationProps {
   title?: string;
@@ -11,8 +12,8 @@ interface CardNavigationProps {
 
 export const CardNavigationContainer: FC<CardNavigationProps> = () => {
   return (
-    <CardNavigation>
-      <IconAndLabel>
+    <CardWrapper width="94.1rem" height="16.1rem">
+      <ContainerIcon>
         <DivIcons>
           <img
             src={Icon1}
@@ -21,18 +22,8 @@ export const CardNavigationContainer: FC<CardNavigationProps> = () => {
           />
         </DivIcons>
         <p>Agendamento</p>
-      </IconAndLabel>
-      <IconAndLabel>
-        <DivIcons>
-          <img
-            src={Icon2}
-            alt="Icon 2"
-            style={{ width: "50px", height: "50px" }}
-          />
-        </DivIcons>
-        <p>Consultas</p>
-      </IconAndLabel>
-      <IconAndLabel>
+      </ContainerIcon>
+      <ContainerIcon>
         <DivIcons>
           <img
             src={Icon3}
@@ -40,8 +31,18 @@ export const CardNavigationContainer: FC<CardNavigationProps> = () => {
             style={{ width: "50px", height: "50px" }}
           />
         </DivIcons>
-        <p>Exames</p>
-      </IconAndLabel>
-    </CardNavigation>
+        <p>Desmembramento</p>
+      </ContainerIcon>
+      <ContainerIcon>
+        <DivIcons>
+          <img
+            src={Icon2}
+            alt="Icon 2"
+            style={{ width: "50px", height: "50px" }}
+          />
+        </DivIcons>
+        <p>Configuração</p>
+      </ContainerIcon>
+    </CardWrapper>
   );
 };

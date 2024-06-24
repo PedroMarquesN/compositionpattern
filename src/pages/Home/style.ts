@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Define duas colunas de igual largura */
-  grid-template-rows: auto auto; /* Duas linhas automáticas */
-  grid-gap: 1.25rem; /* Espaçamento entre os elementos */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: auto auto; 
+  grid-gap: 1.25rem; 
   padding: 3.25rem;
 
   /* Define áreas de grade */
@@ -15,18 +15,18 @@ export const Container = styled.div`
 `;
 
 export const CardNavigationArea = styled.div`
-  grid-area: cardNavigation; /* Define a área da grade para este componente */
+  grid-area: cardNavigation; 
 `;
 
 export const CardUserArea = styled.div`
-  grid-area: cardUser; /* Define a área da grade para este componente */
+  grid-area: cardUser; 
 `;
 
 export const VolumeCenterArea = styled.div`
-  grid-area: volumeCenter; /* Define a área da grade para este componente */
+  grid-area: volumeCenter; 
 `;
 
 export const FinanceCardArea = styled.div`
-  grid-area: financeCard; /* Define a área da grade para este componente */
-  height: 100%; /* Certifique-se de que o componente ocupe toda a área */
+  grid-area: financeCard; 
+  height: 100%; 
 `;

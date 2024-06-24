@@ -16,7 +16,7 @@ export const DivIcons = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: ${({ theme }) => theme.space[3]};
+    border-radius: ${({ theme }) => theme.radius[1]};
     width: 6.25rem;
     height: 6.625rem;
     background: ${({ theme }) => theme.colors.primary};
@@ -26,25 +26,35 @@ export const DivIcons = styled.div`
     }
 `;
 
-export const IconAndLabel = styled.div`
+export const ContainerIcon = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 8rem; 
-    margin-left: 0; 
+    width: 8rem;
+    margin-left: 0;
     cursor: pointer;
 
-
     &:first-child {
-        margin-left: 2rem; 
+        margin-left: 2rem;
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: 0.75rem;
         font-weight: 500;
-        margin-top: 0.5rem; 
-        text-align: center; 
-        word-wrap: break-word; 
-        overflow-wrap: break-word; 
+        margin-top: 0.5rem;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 `;
+
+
+export const StyledCardText = styled.p`
+    
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    `

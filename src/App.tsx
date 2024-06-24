@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './AuthProvider';
 import Login from './pages/Login';
-import ProtectedRoute from './Route/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 
 const App: React.FC = () => {
