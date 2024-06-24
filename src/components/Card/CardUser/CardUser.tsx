@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { CardUser, DataUser, DataUserContainer, ImageUser, PerfilImg } from "./style";
 import ImageUserAsset from "../../../assets/Vector.png";
+import CardWrapper from "../CardContainer";
 
 interface CardUserContainerProps {
   username: string;
@@ -9,7 +10,7 @@ interface CardUserContainerProps {
 
 const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }) => {
   return (
-    <CardUser>
+    <CardWrapper width="32.5rem" height="16.6rem">
       <PerfilImg>
         <ImageUser src={ImageUserAsset} alt="Perfil" />
       </PerfilImg>
@@ -23,7 +24,7 @@ const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }
           <p>{accessLevel}</p>
         </DataUser>
       </DataUserContainer>
-    </CardUser>
+    </CardWrapper>
   );
 };
 

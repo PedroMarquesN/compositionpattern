@@ -11,7 +11,7 @@ export const dark: DefaultTheme = {
       ternary: 'rgb(29, 39, 44)',
   
       blue: '#339af0',
-      blueHover: 'rgb(3, 169, 244)',
+      overeasy: '#8fa858',
       greenHover: '#708030',
       orange: ' rgb(255, 152, 0)',
   

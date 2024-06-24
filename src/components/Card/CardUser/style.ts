@@ -20,13 +20,13 @@ export const DataUser = styled.div`
 margin-bottom: 0.8rem;
     label {
         color: #4B4545;
-        font-size: 1.675rem;
-        font-weight: 400;
+        font-size: 1.4rem;
+        font-weight: 600;
     }
     p {
         color: #4B4545;
-        font-size: 1.675rem;
-        font-weight: 600;
+        font-size: 1.4rem;
+        font-weight: 400;
     
     }
 `

@@ -15,7 +15,7 @@ interface CardNavigationProps {
 
 export const CardNavigationContainer: FC<CardNavigationProps> = () => {
   return (
-    <CardWrapper width="94.1rem" height="16.1rem">
+    <CardWrapper width="94.1rem" height="16.6rem">
       <IconWrapper>
         <DivIcons>
         <CardIcon src={Icon1} alt="icon1" />

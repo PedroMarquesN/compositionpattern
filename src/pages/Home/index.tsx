@@ -1,28 +1,11 @@
-import { FC } from 'react';
-import { Container, CardNavigationArea, CardUserArea, VolumeCenterArea, FinanceCardArea } from './style';
+import React from 'react'
+import ContentContainer from '../../components/Card'
 
-import { CardNavigationContainer } from '../../components/Card/CardNavigation/Navigation';
-import CardUserContainer from '../../components/Card/CardUser/CardUser';
-import VolumeCenterContainer from '../../components/Card/VolumeCenters/VolumeCenterContainer';
-import FinanceCard from '../../components/Card/FinanceCard/FinanceCard';
-
-const ContentContainer: FC = () => {
+const Home = () => {
   return (
-    <Container>
-      <CardNavigationArea>
-        <CardNavigationContainer />
-      </CardNavigationArea>
-      <CardUserArea>
-        <CardUserContainer username="MarquesDev" accessLevel="Administrador" />
-      </CardUserArea>
-      <VolumeCenterArea>
-        <VolumeCenterContainer />
-      </VolumeCenterArea>
-      <FinanceCardArea>
-        <FinanceCard />
-      </FinanceCardArea>
-    </Container>
-  );
-};
+    <ContentContainer />
+  )
+}
 
-export default ContentContainer;
+export default Home
+
