@@ -17,11 +17,11 @@ export const DivIcons = styled.div`
     justify-content: center;
     flex-direction: column;
     border-radius: ${({ theme }) => theme.radius[1]};
-    width: 6.25rem;
-    height: 6.625rem;
+    width: 9rem;
+    height: 8rem;
     background: ${({ theme }) => theme.colors.primary};
     &:hover {
-        scale: 1.2;
+        scale: 1.1;
         background-color: ${({ theme }) => theme.colors.greenHover};
     }
 `;
@@ -34,24 +34,11 @@ export const ContainerIcon = styled.div`
     margin-left: 0;
     cursor: pointer;
 
-    &:first-child {
-        margin-left: 2rem;
-    }
-
-    p {
-        font-size: 0.75rem;
-        font-weight: 500;
-        margin-top: 0.5rem;
-        text-align: center;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
 `;
 
 
 export const StyledCardText = styled.p`
-    
-        font-size: 0.75rem;
+        font-size: 1.2rem;
         font-weight: 500;
         margin-top: 0.5rem;
         text-align: center;

@@ -1,19 +1,11 @@
-import React, { FC } from 'react'
-import { StyledCard } from './styles'
-import { CardProps } from '../../@types/CardHome'
+import React from 'react'
 
-
-
-
-const CardWrapper:FC<CardProps> = ({children, width, height}) => {
+const index = () => {
   return (
     <div>
-        <StyledCard width={width} height={height}>
-            {children}
-        </StyledCard>
       
     </div>
   )
 }
 
-export default CardWrapper
+export default index

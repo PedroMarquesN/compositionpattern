@@ -14,11 +14,3 @@ const CardText: FC<CardTextProps> = ({ text }) => {
 
 
 export default CardText;
-
-
-// <CardWrapper width="94.1rem" height="16.1rem">
-// <IconWrapper>
-//   <CardIcon src={Icon1} alt="icon1" />
-//   <CardText text="Agendamento" />
-// </IconWrapper>
-// </CardWrapper>

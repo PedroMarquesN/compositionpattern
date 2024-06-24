@@ -8,7 +8,7 @@ export const Container = styled.div`
   grid-gap: 1.25rem; 
   padding: 3.25rem;
 
-  /* Define áreas de grade */
+  
   grid-template-areas:
     "cardNavigation cardUser"
     "volumeCenter financeCard";

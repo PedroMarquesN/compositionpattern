@@ -1,9 +1,12 @@
 import { FC } from "react";
-import { CardNavigation, ContainerIcon, DivIcons } from "./style";
+import { DivIcons } from "./style";
 import Icon1 from "../../../assets/icon1.png";
 import Icon2 from "../../../assets/icon2.png";
 import Icon3 from "../../../assets/icon3.png";
-import CardWrapper from "..";
+import CardWrapper from "../CardContainer";
+import IconWrapper from "./IconContainer";
+import CardIcon from "./CardImg";
+import CardText from "./CardText";
 
 interface CardNavigationProps {
   title?: string;
@@ -13,36 +16,24 @@ interface CardNavigationProps {
 export const CardNavigationContainer: FC<CardNavigationProps> = () => {
   return (
     <CardWrapper width="94.1rem" height="16.1rem">
-      <ContainerIcon>
+      <IconWrapper>
         <DivIcons>
-          <img
-            src={Icon1}
-            alt="Icon 1"
-            style={{ width: "50px", height: "50px" }}
-          />
+        <CardIcon src={Icon1} alt="icon1" />
         </DivIcons>
-        <p>Agendamento</p>
-      </ContainerIcon>
-      <ContainerIcon>
+        <CardText text="Agendamento" />
+      </IconWrapper>
+      <IconWrapper>
         <DivIcons>
-          <img
-            src={Icon3}
-            alt="Icon 3"
-            style={{ width: "50px", height: "50px" }}
-          />
+        <CardIcon src={Icon2} alt="icon2" />
         </DivIcons>
-        <p>Desmembramento</p>
-      </ContainerIcon>
-      <ContainerIcon>
+        <CardText text="Consulta" />
+      </IconWrapper>
+      <IconWrapper>
         <DivIcons>
-          <img
-            src={Icon2}
-            alt="Icon 2"
-            style={{ width: "50px", height: "50px" }}
-          />
+        <CardIcon src={Icon3} alt="icon3" />
         </DivIcons>
-        <p>Configuração</p>
-      </ContainerIcon>
+        <CardText text="Exames" />
+      </IconWrapper>
     </CardWrapper>
   );
 };
