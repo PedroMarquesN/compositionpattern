@@ -5,9 +5,9 @@ import { CardProps } from '../../../@types/CardHome'
 
 
 
-const CardWrapper:FC<CardProps> = ({children, width, height}) => {
+const CardWrapper:FC<CardProps> = ({children, width, height, enableOverflow}) => {
   return (
-        <StyledCard width={width} height={height}>
+        <StyledCard width={width} height={height} enableOverflow={enableOverflow}>
             {children}
         </StyledCard>
   )

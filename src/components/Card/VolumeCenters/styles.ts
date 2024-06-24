@@ -4,7 +4,7 @@ export const CenterContainer = styled.div`
     display: flex;
     flex-wrap: wrap; 
     gap: 1.25rem;
-    width: 100%; 
+    width: 94.1rem; 
     padding: 1.25rem; 
     height: 28.8125rem;
     background-color: ${({ theme }) => theme.colors.tertiary};

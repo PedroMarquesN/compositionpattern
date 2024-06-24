@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const FinanceCardContainer = styled.div`
     display: flex;
     flex-direction: column; 
-    width: 30.3125rem;
-    height: 28.8125rem;
+    width: 32.5rem;
+    height: 32rem;
     background-color: ${({ theme }) => theme.colors.tertiary};
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `
@@ -14,7 +14,7 @@ export const FinanceH3 = styled.h3`
     font-size: ${({ theme }) => theme.fontSizes[3]};
     font-weight: 400;
     color: ${({ theme }) => theme.colors.text1};
-    padding: 0.75rem;
+    margin: 1.5rem 0.25rem;
 `
 
 export const FinanceLabel = styled.label`

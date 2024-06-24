@@ -1,27 +1,21 @@
 import { FC } from "react";
-import { CardNavigationArea, CardUserArea, Container, FinanceCardArea, VolumeCenterArea } from "./styles";
+import { Container } from "./styles";
 import { CardNavigationContainer } from "./CardNavigation/Navigation";
 import CardUserContainer from "./CardUser/CardUser";
 import FinanceCard from "./FinanceCard/FinanceCard";
-import VolumeCenterContainer from "./VolumeCenters/VolumeCenterContainer"; 
-
-
+import VolumeCenterContainer from "./VolumeCenters/VolumeCenterContainer";
+import { TableContainer } from "./Table/TableContainer";
+import CardLicense from "./LicenseTecno/CardLicense";
 
 const ContentContainer: FC = () => {
   return (
     <Container>
-      <CardNavigationArea>
-        <CardNavigationContainer />
-      </CardNavigationArea>
-      <CardUserArea>
-        <CardUserContainer username="MarquesDev" accessLevel="Administrador" />
-      </CardUserArea>
-      <VolumeCenterArea>
-        <VolumeCenterContainer />
-      </VolumeCenterArea>
-      <FinanceCardArea>
-        <FinanceCard />
-      </FinanceCardArea>
+      <CardNavigationContainer />
+      <CardUserContainer username="MarquesDev" accessLevel="Administrador" />
+      <VolumeCenterContainer />
+      <FinanceCard />
+      <TableContainer />
+      <CardLicense />
     </Container>
   );
 };

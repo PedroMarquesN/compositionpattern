@@ -3,10 +3,13 @@ import styled from "styled-components";
 interface StyledCardProps {
     width?: string;
     height?: string;
+    enableOverflow?: boolean
 }
 
 export const StyledCard = styled.div<StyledCardProps>`
     display: flex;
+    ${({ enableOverflow }) => enableOverflow && 'overflow-x: auto;'}
+    flex-wrap: wrap;
     align-items: center;
     gap: ${({ theme }) => theme.space[9]};
     padding: ${({ theme }) => theme.space[9]};
@@ -26,25 +29,5 @@ export const Container = styled.div`
   grid-gap: 1.25rem; 
   padding: 3.25rem;
 
-  
-  grid-template-areas:
-    "cardNavigation cardUser"
-    "volumeCenter financeCard";
 `;
 
-export const CardNavigationArea = styled.div`
-  grid-area: cardNavigation; 
-`;
-
-export const CardUserArea = styled.div`
-  grid-area: cardUser; 
-`;
-
-export const VolumeCenterArea = styled.div`
-  grid-area: volumeCenter; 
-`;
-
-export const FinanceCardArea = styled.div`
-  grid-area: financeCard; 
-  height: 100%; 
-`;
