@@ -6,7 +6,7 @@ import CardContainer from "../CardContainer/CardContainer";
 
 const FinanceCard: React.FC = () => {
   return (
-    <CardContainer>
+    <CardContainer height='32rem'>
       <FinanceCardContainer>
         <IconFinance>
           <CiCreditCard1 fill="white" size={48} />

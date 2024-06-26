@@ -11,7 +11,7 @@ import CardContainer from "../CardContainer/CardContainer";
 
 const VolumeCenterContainer = () => {
   return (
-    <CardContainer width="94.1rem" height="32rem">
+    <CardContainer height="32rem">
       <CenterContainer>
         {centerList.map((center, index) => (
           <Center key={index}>
