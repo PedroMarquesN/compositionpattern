@@ -7,7 +7,7 @@ import ButtonWrapper from "./ButtonTable";
 
 export const TableContainer = () => {
   return (
-    <CardContainer  height="32rem">
+    <CardContainer>
       <StyledTable>
         <thead>
           <tr>
