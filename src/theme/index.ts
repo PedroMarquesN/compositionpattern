@@ -16,7 +16,7 @@ export const dark: DefaultTheme = {
       orange: ' rgb(255, 152, 0)',
   
       success: '#1E641D',
-      error: '#E3213E',
+      error: '#D10000',
   
       gray100: '#F2F4F6',
       gray200: '#D9D9D9',
