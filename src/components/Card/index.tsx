@@ -15,10 +15,10 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 const layout: Layout[] = [
   { i: "navigation", x: 0, y: 0, w: 3, h: 2, static: true },
   { i: "user", x: 3, y: 0, w: 1, h: 2, static: true },
-  { i: "volume", x: 0, y: 2, w: 3, h: 2 },
-  { i: "finance", x: 3, y: 2, w: 1, h: 2 },
-  { i: "table", x: 0, y: 4, w: 3, h: 2 },
-  { i: "license", x: 3, y: 4, w: 1, h: 2 },
+  { i: "volume", x: 0, y: 2, w: 3, h: 3 },
+  { i: "finance", x: 3, y: 2, w: 1, h: 3 },
+  { i: "table", x: 0, y: 4, w: 3, h: 3 },
+  { i: "license", x: 3, y: 4, w: 1, h: 3 },
 ];
 
 const ContentContainer: React.FC = () => {
