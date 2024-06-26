@@ -2,14 +2,8 @@ import styled from "styled-components";
 
 export const CenterContainer = styled.div`
     display: flex;
-    flex-wrap: wrap; 
-    gap: 1.25rem;
-    width: 94.1rem; 
-    padding: 1.25rem; 
-    height: 28.8125rem;
-    background-color: ${({ theme }) => theme.colors.tertiary};
-    overflow-x: auto;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    flex-wrap: wrap;
+    align-items: center;
 `;
 
 export const Center = styled.div`

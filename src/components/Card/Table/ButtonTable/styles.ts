@@ -15,7 +15,7 @@ export const ButtonTable = styled.button`
     color: ${({ theme }) => theme.colors.text};
     
     &:hover {
-        background-color: #ddd;
+        background-color: #e57373;
     }
     
     `;

@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const FinanceCardContainer = styled.div`
     display: flex;
     flex-direction: column; 
-    width: 32.5rem;
-    height: 32rem;
-    background-color: ${({ theme }) => theme.colors.tertiary};
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `
 
 

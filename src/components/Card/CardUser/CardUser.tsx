@@ -10,7 +10,8 @@ interface CardUserContainerProps {
 
 const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }) => {
   return (
-    <CardWrapper width="32.5rem" height="16.6rem">
+    
+    <CardWrapper  height="16.6rem">
       <PerfilImg>
         <ImageUser src={ImageUserAsset} alt="Perfil" />
       </PerfilImg>
