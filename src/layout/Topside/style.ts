@@ -1,5 +1,5 @@
 import { FaCog } from 'react-icons/fa';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
 export const LogoNav = styled.img`
@@ -24,7 +24,17 @@ export const Logo = styled.img`
   margin: 0 auto;
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 export const SettingsIcon = styled(FaCog)`
   cursor: pointer;
-  
+  &:hover {
+    animation: ${rotate} 1s linear ;
+  }
 `;
