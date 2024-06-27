@@ -5,7 +5,6 @@ export const FinanceCardContainer = styled.div`
     flex-direction: column; 
 `
 
-
 export const FinanceH3 = styled.h3`
     font-size: ${({ theme }) => theme.fontSizes[3]};
     font-weight: 400;
@@ -39,5 +38,5 @@ export const IconFinance = styled.div`
     background: ${({ theme }) => theme.colors.primary};
     justify-content: center;
     align-items: center;
-    margin: 0.75rem;
+    
 `
