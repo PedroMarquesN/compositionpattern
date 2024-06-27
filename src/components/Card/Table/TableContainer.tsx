@@ -4,6 +4,7 @@ import { DataTable, DataTableProps } from "./Data";
 import { StyledTable } from "./styles";
 import ButtonWrapper from "./ButtonTable";
 import { StyledH1 } from "../styles";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 
 export const TableContainer: FC = () => {
@@ -29,7 +30,7 @@ export const TableContainer: FC = () => {
               <td>{data.transportadora}</td>
               <td>{data.volume}</td>
               <td>{data.status}</td>
-              <td><ButtonWrapper/></td>
+              <td><ButtonWrapper icon={<FaRegTrashAlt />}>Eliminar Agendamento</ButtonWrapper></td>
             </tr>
           ))}
         </tbody>
