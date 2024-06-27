@@ -17,9 +17,6 @@ const Dashboard = () => {
     <div>
       <Navbar
         Logo={ImagemLogo}
-        children={<div />}
-        profileIconSrc="default_icon_src.png"
-        dropdownContent={<div />}
       />
       <ContentContainer  />
     </div>
