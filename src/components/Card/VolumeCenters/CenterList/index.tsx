@@ -1,7 +1,8 @@
+import { Centers } from '../../../../@types/Center';
 import IconIndustrie from '../../../../assets/Industrie.png';
 
 
-export const centerList = [
+export const centerList: Centers[] = [
     {
         icon:   IconIndustrie,
         code: 'BS01',

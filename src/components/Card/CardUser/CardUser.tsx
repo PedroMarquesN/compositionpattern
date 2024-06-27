@@ -2,11 +2,8 @@ import React, { FC } from "react";
 import { CardUser, DataUser, DataUserContainer, ImageUser, PerfilImg } from "./style";
 import ImageUserAsset from "../../../assets/Vector.png";
 import CardWrapper from "../CardContainer";
+import { CardUserContainerProps } from "../../../@types/Users";
 
-interface CardUserContainerProps {
-  username: string;
-  accessLevel: string;
-}
 
 const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }) => {
   return (

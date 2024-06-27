@@ -1,10 +1,6 @@
 import React from 'react';
 import { FinanceInput, FinanceLabel } from './style';
-
-interface FinanceFieldProps {
-  label: string;
-  placeholder: string;
-}
+import { FinanceFieldProps } from '../../../@types/Finance';
 
 const FinanceField: React.FC<FinanceFieldProps> = ({ label, placeholder }) => (
   <>
