@@ -1,11 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import CardContainer from "../CardContainer/CardContainer";
 import { DataTable, DataTableProps } from "./Data";
 import { StyledTable } from "./styles";
 import ButtonWrapper from "./ButtonTable";
 
 
-export const TableContainer = () => {
+export const TableContainer: FC = () => {
   return (
     <CardContainer>
       <StyledTable>

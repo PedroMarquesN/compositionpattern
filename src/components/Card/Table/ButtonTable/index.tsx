@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
 import { ButtonTable } from './styles';
 
-const ButtonWrapper = () => {
+interface ButtonWrapperProps extends React.HTMLAttributes<HTMLButtonElement>{
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+const ButtonWrapper:FC = () => {
   return (
-        <ButtonTable>
+        <ButtonTable >
             <FaRegTrashAlt />
             Eliminar Agendamento
         </ButtonTable>

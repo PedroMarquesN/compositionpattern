@@ -21,6 +21,12 @@ export const StyledCard = styled.div<StyledCardProps>`
 
 
 export const Container = styled.div`
+
+  .react-grid-placeholder {
+    background: transparent;
+    border : 2px dashed black;
+  }
+  
   padding: 1rem;
   height: 100%;
   width: 100vw;

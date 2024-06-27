@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   Center,
   CenterCode,
@@ -9,7 +9,7 @@ import {
 import { centerList } from "./CenterList";
 import CardContainer from "../CardContainer/CardContainer";
 
-const VolumeCenterContainer = () => {
+const VolumeCenterContainer: FC = () => {
   return (
     <CardContainer height="32rem">
       <CenterContainer>
