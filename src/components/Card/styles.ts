@@ -41,3 +41,11 @@ export const StyledCardContainer = styled.div<StyledCardProps>`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 1rem;
 `;
+
+
+export const StyledH1 = styled.h1`
+    padding: 1rem ;
+    font-size: 2rem;
+    font-weight: 400;
+    color: ${({ theme }) => theme.colors.text1};
+`;

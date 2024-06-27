@@ -3,11 +3,13 @@ import CardContainer from "../CardContainer/CardContainer";
 import { DataTable, DataTableProps } from "./Data";
 import { StyledTable } from "./styles";
 import ButtonWrapper from "./ButtonTable";
+import { StyledH1 } from "../styles";
 
 
 export const TableContainer: FC = () => {
   return (
     <CardContainer>
+      <StyledH1>Grade de agendamento</StyledH1>
       <StyledTable>
         <thead>
           <tr>

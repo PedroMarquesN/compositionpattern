@@ -8,10 +8,12 @@ import {
 } from "./styles";
 import { centerList } from "./CenterList";
 import CardContainer from "../CardContainer/CardContainer";
+import { StyledH1 } from "../styles";
 
 const VolumeCenterContainer: FC = () => {
   return (
     <CardContainer height="32rem">
+      <StyledH1>Centros com volume</StyledH1>
       <CenterContainer>
         {centerList.map((center, index) => (
           <Center key={index}>
