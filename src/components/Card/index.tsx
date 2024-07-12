@@ -9,6 +9,11 @@ import { TableContainer } from "./Table/TableContainer";
 import CardLicense from "./LicenseTecno/CardLicense";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import { Card, RouteType } from "../../@types/Card";
+import Icon1 from "../../assets/icon1.png";
+import Icon2 from "../../assets/icon2.png";
+import Icon3 from "../../assets/icon3.png";
+import CardContainer from "./CardContainer/CardContainer";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -21,7 +26,31 @@ const layout: Layout[] = [
   { i: "license", x: 3, y: 4, w: 1, h: 3 },
 ];
 
+
+
+
 const ContentContainer: React.FC = () => {
+
+  let finantialCard:Card = {id: "finance", content: <FinanceCard /> };
+  let centerCard:Card = {id: "volume", content: <VolumeCenterContainer /> };
+  let tableCard:Card = {id: "table", content: <TableContainer /> };
+  let technologyLicenseCard:Card = {id: "license", content: <CardLicense /> };
+
+
+  let adminCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
+  let clientCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
+  let courierCards:Card[] = [tableCard];
+  let operatorCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
+
+  let routeScheduling: RouteType = {title: "Agendamento", icon: Icon1, route: '/agendamento'};
+  let routeDismemberment: RouteType = {title: "Desmembramento", icon: Icon3, route: '/desmembramento'};
+  let adminRoute: RouteType = {title: "Configuração", icon: Icon2, route: '/admin'};
+
+  let administratorRoutes: RouteType[] = [routeScheduling, adminRoute, routeDismemberment];
+  let operatorRoutes: RouteType[] = [routeDismemberment, routeScheduling];
+  let courierRoutes: RouteType[] = [routeScheduling];
+
+
   return (
     <Container>
     <ResponsiveGridLayout
@@ -35,12 +64,23 @@ const ContentContainer: React.FC = () => {
       isResizable
       
     >
-      <div key="navigation"><CardNavigationContainer /></div>
-      <div key="user"><CardUserContainer username="MarquesDev" accessLevel="Administrador" /></div>
-      <div key="volume"><VolumeCenterContainer /></div>
-      <div key="finance"><FinanceCard /></div>
-      <div key="table"><TableContainer /></div>
-      <div key="license"><CardLicense /></div>
+      <div key="navigation">
+        <CardNavigationContainer routes={administratorRoutes} />
+      </div>
+      <div key="user">
+        <CardUserContainer username="MarquesDev" accessLevel="Administrador" />
+      </div>
+      {
+        adminCards.map(c => {
+          return (
+            <div key={c.id}>
+              <CardContainer>
+                {c.content}
+              </CardContainer>
+            </div>
+          )
+        })
+      }
     </ResponsiveGridLayout>
   </Container>
   );

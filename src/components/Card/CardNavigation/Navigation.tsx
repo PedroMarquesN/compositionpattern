@@ -8,34 +8,25 @@ import IconWrapper from "./IconContainer";
 import CardIcon from "./CardImg";
 import CardText from "./CardText";
 import CardContainer from "../CardContainer/CardContainer";
+import { CardNavigationProps } from "../../../@types/Card";
 
-interface CardNavigationProps {
-  title?: string;
-  link?: string;
-}
 
-export const CardNavigationContainer: FC<CardNavigationProps> = () => {
+export const CardNavigationContainer: FC<CardNavigationProps> = ({routes}) => {
   return (
     <CardContainer height="16.6rem">
     <CardWrapper>
-      <IconWrapper>
-        <DivIcons>
-        <CardIcon src={Icon1} alt="icon1" />
-        </DivIcons>
-        <CardText text="Agendamento" />
-      </IconWrapper>
-      <IconWrapper>
-        <DivIcons>
-        <CardIcon src={Icon2} alt="icon2" />
-        </DivIcons>
-        <CardText text="Consulta" />
-      </IconWrapper>
-      <IconWrapper>
-        <DivIcons>
-        <CardIcon src={Icon3} alt="icon3" />
-        </DivIcons>
-        <CardText text="Exames" />
-      </IconWrapper>
+      {
+        routes?.map(r => {
+          return (
+            <IconWrapper>
+              <DivIcons>
+              <CardIcon src={r.icon} alt={r.route} />
+              </DivIcons>
+              <CardText text={r.title} />
+            </IconWrapper>
+          );
+      })
+      }
     </CardWrapper>
     </CardContainer>
   );
