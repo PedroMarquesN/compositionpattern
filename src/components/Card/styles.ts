@@ -9,19 +9,15 @@ interface StyledCardProps {
 export const StyledCard = styled.div<StyledCardProps>`
     display: flex;
     ${({ enableOverflow }) => enableOverflow && 'overflow-x: auto;'}
-    flex-wrap: wrap;
     align-items: center;
     gap: ${({ theme }) => theme.space[9]};
     padding: ${({ theme }) => theme.space[9]};
     height: ${(props) => props.height || "100%"};
-    background-color: ${({ theme }) => theme.colors.tertiary};
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 
 
 export const Container = styled.div`
-
   .react-grid-placeholder {
     background: transparent;
     border : 2px dashed black;

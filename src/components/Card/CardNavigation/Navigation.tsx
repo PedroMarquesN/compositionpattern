@@ -7,6 +7,7 @@ import CardWrapper from "../CardContainer";
 import IconWrapper from "./IconContainer";
 import CardIcon from "./CardImg";
 import CardText from "./CardText";
+import CardContainer from "../CardContainer/CardContainer";
 
 interface CardNavigationProps {
   title?: string;
@@ -15,7 +16,8 @@ interface CardNavigationProps {
 
 export const CardNavigationContainer: FC<CardNavigationProps> = () => {
   return (
-    <CardWrapper width="94.1rem" height="16.6rem">
+    <CardContainer height="16.6rem">
+    <CardWrapper>
       <IconWrapper>
         <DivIcons>
         <CardIcon src={Icon1} alt="icon1" />
@@ -35,5 +37,6 @@ export const CardNavigationContainer: FC<CardNavigationProps> = () => {
         <CardText text="Exames" />
       </IconWrapper>
     </CardWrapper>
+    </CardContainer>
   );
 };

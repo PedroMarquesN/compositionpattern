@@ -3,12 +3,13 @@ import { CardUser, DataUser, DataUserContainer, ImageUser, PerfilImg } from "./s
 import ImageUserAsset from "../../../assets/Vector.png";
 import CardWrapper from "../CardContainer";
 import { CardUserContainerProps } from "../../../@types/Users";
+import CardContainer from "../CardContainer/CardContainer";
 
 
 const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }) => {
   return (
-    
-    <CardWrapper  height="16.6rem">
+    <CardContainer height="16.6rem">
+    <CardWrapper >
       <PerfilImg>
         <ImageUser src={ImageUserAsset} alt="Perfil" />
       </PerfilImg>
@@ -23,6 +24,7 @@ const CardUserContainer: FC<CardUserContainerProps> = ({ username, accessLevel }
         </DataUser>
       </DataUserContainer>
     </CardWrapper>
+    </CardContainer>
   );
 };
 
