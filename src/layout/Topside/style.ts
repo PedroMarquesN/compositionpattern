@@ -38,3 +38,18 @@ export const SettingsIcon = styled(FaCog)`
     animation: ${rotate} 1s linear ;
   }
 `;
+
+export const LogoutButton = styled.button`
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #ff1a1a;
+  }
+`;

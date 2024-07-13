@@ -49,12 +49,18 @@ export const InputContainer = styled.div`
         line-height: normal;
     }
     input {
-        width: 30.6875rem;
-        height: 3.6rem;
-        border-radius: 0.25rem;
-        background: #F4F4F4;
-        border: none;
-        border-radius: 0.25rem;
+    width: 30.6875rem;
+    height: 3.6rem;
+    border-radius: 0.25rem;
+    background: #F4F4F4;
+    border: none;
+    border-radius: 0.25rem;
+    color: #606060; 
+    &:focus {
+        outline: none;
+        border: 1px solid #ccc;
+    }
+
     }
     svg {
         font-size: 1.5rem;
@@ -63,6 +69,7 @@ export const InputContainer = styled.div`
         top: 75%;
         transform: translateY(-50%);
   }
+
 `
 
 export const StyledButtonForm = styled.button`

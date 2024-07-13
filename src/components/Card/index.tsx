@@ -38,9 +38,9 @@ const ContentContainer: React.FC = () => {
 
 
   let adminCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
-  let clientCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
+  let clientCards:Card[] = [finantialCard, tableCard, technologyLicenseCard];
   let courierCards:Card[] = [tableCard];
-  let operatorCards:Card[] = [finantialCard, centerCard, tableCard, technologyLicenseCard];
+  let operatorCards:Card[] = [finantialCard, centerCard];
 
   let routeScheduling: RouteType = {title: "Agendamento", icon: Icon1, route: '/agendamento'};
   let routeDismemberment: RouteType = {title: "Desmembramento", icon: Icon3, route: '/desmembramento'};

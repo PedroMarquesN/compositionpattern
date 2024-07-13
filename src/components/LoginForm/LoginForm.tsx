@@ -1,25 +1,87 @@
-import { FC } from "react";
+import React, { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormInput } from "../../@types/LoginForm";
+import { IFormInput, IRegisterFormInput } from "../../@types/LoginForm";
 import { useNavigate } from "react-router-dom";
 import { ContainerLogin, DivContainer, FormContainer } from "./styles";
-import FormImg from "./ImageForm";
 import NewFormImg from "./ImageForm";
 import Logo from "./Logo";
 import Input from "./Input";
-import { error } from "console";
 import ButtonForm from "./Button";
+import styled from "styled-components";
+
+export const roles = [
+  { value: "admin", label: "Administrador" },
+  { value: "client", label: "Cliente" },
+  { value: "user", label: "Usuário" },
+  { value: "viewer", label: "Visualização" },
+];
+
+export type RoleOption = (typeof roles)[number]["value"];
+
+const StyledSelect = styled.select`
+  padding: 8px;
+  font-size: 16px;
+`;
+
+const API_URL = "http://localhost:8080/api/users";
+const API_LOGIN = "http://localhost:8080/api/auth/login"
 
 const LoginForm: FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInput>();
+    reset,
+  } = useForm<IRegisterFormInput>();
   const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(true);
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    navigate("/dashboard");
+  const onSubmitLogin: SubmitHandler<IFormInput> = async (data) => {
+    try {
+      const response = await fetch(API_LOGIN, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (response.ok) {
+        const { token } = await response.json(); 
+        localStorage.setItem("token", token);
+        navigate("/dashboard");
+      } else {
+        console.error("Erro ao fazer login");
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+    }
+  };
+
+  const onSubmitRegister: SubmitHandler<IRegisterFormInput> = async (data) => {
+    try {
+      const response = await fetch(`${API_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(data)
+
+      if (response.ok) {
+        console.log("Usuário registrado com sucesso!");
+        navigate("/dashboard");
+      } else {
+        console.error("Erro ao registrar usuário");
+      }
+    } catch (error) {
+      console.error("Erro ao registrar usuário:", error);
+    }
+  };
+  const handleToggleForm = () => {
+    setIsLogin(!isLogin);
+    reset();
   };
 
   return (
@@ -27,29 +89,78 @@ const LoginForm: FC = () => {
       <NewFormImg />
       <DivContainer>
         <Logo />
-        <FormContainer onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            label="Usuário:"
-            type="text"
-            register={register}
-            name="username"
-            error={errors.username?.message}
-          />
-          <Input
-            label="Senha:"
-            type="password"
-            register={register}
-            name="password"
-            error={errors.password?.message}
-          />
-          <a href='#'>Esqueçeu a senha ?</a>
-          <ButtonForm type='submit'>Acessar Portal</ButtonForm>
+        <FormContainer
+          key={isLogin ? "loginForm" : "registerForm"}
+          onSubmit={
+            isLogin
+              ? handleSubmit(onSubmitLogin)
+              : handleSubmit(onSubmitRegister)
+          }
+        >
+          {isLogin ? (
+            <>
+              <Input
+                label="Usuário:"
+                type="text"
+                register={register}
+                name="username"
+                error={errors.username?.message}
+              />
+              <Input
+                label="Senha:"
+                type="password"
+                register={register}
+                name="password"
+                error={errors.password?.message}
+              />
+              <a href="#">Esqueceu a senha?</a>
+              <ButtonForm type="submit">Acessar Portal</ButtonForm>
+              <ButtonForm type="button" onClick={handleToggleForm}>
+                Cadastrar
+              </ButtonForm>
+            </>
+          ) : (
+            <>
+              <Input
+                label="Novo Usuário:"
+                type="text"
+                register={register}
+                name="username"
+                error={errors.username?.message}
+              />
+              <Input
+                label="Nova Senha:"
+                type="password"
+                register={register}
+                name="password"
+                error={errors.password?.message}
+              />
+              <StyledSelect
+                {...register("role" as const, {
+                  required: "Selecione um papel",
+                })}
+                defaultValue=""
+              >
+                <option value="" disabled hidden>
+                  Selecione um Cargo
+                </option>
+                {roles.map((role) => (
+                  <option key={role.value} value={role.value}>
+                    {role.label}
+                  </option>
+                ))}
+              </StyledSelect>
+              {errors.role && <span>{errors.role.message}</span>}
+              <ButtonForm type="submit">Criar Conta</ButtonForm>
+              <ButtonForm type="button" onClick={handleToggleForm}>
+                Voltar para o Login
+              </ButtonForm>
+            </>
+          )}
         </FormContainer>
       </DivContainer>
     </ContainerLogin>
   );
 };
-
-
 
 export default LoginForm;

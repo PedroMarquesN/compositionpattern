@@ -10,11 +10,16 @@ export interface InputProps {
 export interface ButtonFormProps {
     type: 'submit' | 'button' | 'reset'
     children: ReactNode
+    onClick?: () => void;
 }
+
 
 export interface IFormInput {
     username: string
     password: string
+}
+export interface IRegisterFormInput  extends IFormInput{
+    role: string
 }
 
 

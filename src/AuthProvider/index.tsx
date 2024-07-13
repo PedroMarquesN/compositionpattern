@@ -1,59 +1,46 @@
-import { createContext, FC, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from 'react';
 
-import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
-import { AuthContextProps, AuthProviderProps } from "../@types/AuthProvider";
+import  { ReactNode } from 'react';
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
-  const [isAuthenticate, setIsAuthenticate] = useState<boolean>(false);
-  const navigate = useNavigate();
+const AuthContext = React.createContext<{ user: null; setUser: React.Dispatch<React.SetStateAction<null>>; } | null>(null);
+
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = React.useState(null);
 
   useEffect(() => {
-    const storedAuth = localStorage.getItem("isAuthenticate");
-    const cookieAuth = Cookies.get("isAuthenticate");
-
-    if (storedAuth === "true" && cookieAuth === "true") {
-      setIsAuthenticate(true);
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetchUserData(token).then(setUser).catch(console.error);
     }
   }, []);
 
-
-
-  const login = (username: string , password: string) => {
-    if (username === 'user' && password === 'password') {
-        setIsAuthenticate(true);
-        localStorage.setItem("isAuthenticate", 'true')
-        Cookies.set('isAuthenticate', 'true' , {expires: 1})
-        navigate('/dashboard')           
-    }else{
-        alert('Credenciais Inválidas')
+  const fetchUserData = async (token: string): Promise<any> => {
+    try {
+      const response = await fetch('/api/auth/user', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error('Falha ao buscar dados do usuário');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Erro ao buscar dados do usuário:', error);
+      throw error;
     }
-  }
+  };
 
-
-  const logout = () => {
-    setIsAuthenticate(false)
-    localStorage.removeItem('isAuthenticate')
-    Cookies.remove('isAuthenticate')
-    navigate('/')
-  }
-
-
-  return(
-    <AuthContext.Provider value={{isAuthenticate,login ,logout}}>
-        {children}
+  return (
+    <AuthContext.Provider value={{ user, setUser }}>
+      {children}
     </AuthContext.Provider>
-  )
-
+  );
 };
 
-export const useAuth = (): AuthContextProps => {
-    const context = useContext(AuthContext);
-    if (context === undefined){
-        throw new Error('Erro , Tente novamente mais tarde')
-    }
-    return context
-
-}
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
