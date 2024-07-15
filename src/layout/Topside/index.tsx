@@ -13,8 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({Logo}) => {
   return (
     <NavbarContainer>
       <LogoComponent src={Logo} />
-      <LogoutButton onClick={logout}>Logout</LogoutButton>
-      <SettingsIcon size="24" />
+      <SettingsIcon onClick={logout} size="24" />
     </NavbarContainer>
   );
 };
