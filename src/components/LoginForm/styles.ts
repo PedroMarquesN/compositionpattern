@@ -106,3 +106,7 @@ export const DivContainer = styled.div`
     justify-content: center;
     flex-direction: column;
 `
+export const StyledSelect = styled.select`
+  padding: 8px;
+  font-size: 16px;
+`;

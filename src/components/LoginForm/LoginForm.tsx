@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IFormInput, IRegisterFormInput } from "../../@types/LoginForm";
 import { useNavigate } from "react-router-dom";
-import { ContainerLogin, DivContainer, FormContainer } from "./styles";
+import { ContainerLogin, DivContainer, FormContainer, StyledSelect } from "./styles";
 import NewFormImg from "./ImageForm";
 import Logo from "./Logo";
 import Input from "./Input";
@@ -10,18 +10,15 @@ import ButtonForm from "./Button";
 import styled from "styled-components";
 
 export const roles = [
-  { value: "admin", label: "Administrador" },
-  { value: "client", label: "Cliente" },
-  { value: "user", label: "Usuário" },
-  { value: "viewer", label: "Visualização" },
+  { value: "Admin", label: "Administrador" },
+  { value: "Client", label: "Cliente" },
+  { value: "User", label: "Usuário" },
+  { value: "Viewer", label: "Visualização" },
 ];
 
 export type RoleOption = (typeof roles)[number]["value"];
 
-const StyledSelect = styled.select`
-  padding: 8px;
-  font-size: 16px;
-`;
+
 
 const API_URL = "http://localhost:8080/api/users";
 const API_LOGIN = "http://localhost:8080/api/auth/login"
@@ -47,8 +44,10 @@ const LoginForm: FC = () => {
       });
   
       if (response.ok) {
-        const { token } = await response.json(); 
+        const { token, role, username } = await response.json(); 
         localStorage.setItem("token", token);
+        localStorage.setItem("role", role);
+        localStorage.setItem("username", username);
         navigate("/dashboard");
       } else {
         console.error("Erro ao fazer login");
@@ -67,11 +66,10 @@ const LoginForm: FC = () => {
         },
         body: JSON.stringify(data),
       });
-      console.log(data)
 
       if (response.ok) {
         console.log("Usuário registrado com sucesso!");
-        navigate("/dashboard");
+        navigate(0);
       } else {
         console.error("Erro ao registrar usuário");
       }
@@ -79,6 +77,7 @@ const LoginForm: FC = () => {
       console.error("Erro ao registrar usuário:", error);
     }
   };
+
   const handleToggleForm = () => {
     setIsLogin(!isLogin);
     reset();

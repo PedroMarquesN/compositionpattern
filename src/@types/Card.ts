@@ -20,3 +20,5 @@ export interface RouteType  {
 export interface CardNavigationProps {
     routes?: RouteType[];
 }
+
+export type UserRole = "Admin" | "Client" | "User" | "Viewer";
