@@ -4,15 +4,18 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import { UserProvider } from './contexts/UserContext';
 import UsersList from './pages/UsersList';
+import Home from './pages/Home';
 
 const App: React.FC = () => {
   return (
     <Router>
       <UserProvider>
-        <Routes>
+      <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/userslist" element={<UsersList />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="panel" element={<Home />} />
+            <Route path="userslist" element={<UsersList />} />
+          </Route>
         </Routes>
       </UserProvider>
     </Router>

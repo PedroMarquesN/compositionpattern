@@ -23,6 +23,7 @@ export const CardNavigationContainer: FC<CardNavigationProps> = ({routes}) => {
               <DivIcons>
                 <Link
                   to={r.route}
+        
                 >
                   <CardIcon src={r.icon} alt={r.route} />
                 </Link>

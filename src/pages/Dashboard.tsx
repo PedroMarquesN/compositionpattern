@@ -4,6 +4,7 @@ import NewSidebar from "../layout/Sidebar/NewSidebar";
 
 import ImagemLogo from "../assets/logobranca.png"
 import ContentContainer from "./Home";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
 
@@ -18,7 +19,7 @@ const Dashboard = () => {
       <Navbar
         Logo={ImagemLogo}
       />
-      <ContentContainer  />
+      <Outlet />
     </div>
   );
 };

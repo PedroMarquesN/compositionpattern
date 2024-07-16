@@ -51,7 +51,7 @@ const LoginForm: FC = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("role", role);
         localStorage.setItem("username", username);
-        navigate("/dashboard");
+        navigate("/dashboard/panel");
       } else {
         console.error("Erro ao fazer login");
       }

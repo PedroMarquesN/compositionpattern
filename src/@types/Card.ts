@@ -14,7 +14,7 @@ export interface FuncionalidadePorPefil {
 export interface RouteType  {
     title: string
     route: string
-    icon: string
+    icon: string 
 }
 
 export interface CardNavigationProps {
