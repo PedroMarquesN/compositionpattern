@@ -9,24 +9,28 @@ import CardIcon from "./CardImg";
 import CardText from "./CardText";
 import CardContainer from "../CardContainer/CardContainer";
 import { CardNavigationProps } from "../../../@types/Card";
+import { Link } from "react-router-dom";
+import { useUser } from "../../../contexts/UserContext";
 
 
 export const CardNavigationContainer: FC<CardNavigationProps> = ({routes}) => {
   return (
     <CardContainer height="16.6rem">
     <CardWrapper>
-      {
-        routes?.map(r => {
-          return (
-            <IconWrapper>
+    {
+          routes?.map((r, index) => ( 
+            <IconWrapper key={index}> 
               <DivIcons>
-              <CardIcon src={r.icon} alt={r.route} />
+                <Link
+                  to={r.route}
+                >
+                  <CardIcon src={r.icon} alt={r.route} />
+                </Link>
               </DivIcons>
               <CardText text={r.title} />
             </IconWrapper>
-          );
-      })
-      }
+          ))
+        }
     </CardWrapper>
     </CardContainer>
   );

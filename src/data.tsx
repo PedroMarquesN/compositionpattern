@@ -28,9 +28,9 @@ export const operatorCards: Card[] = [
 ];
 
 export const routeScheduling: RouteType = {
-  title: "Agendamento",
+  title: "Usuários",
   icon: Icon1,
-  route: "/agendamento",
+  route: "/userslist",
 };
 export const routeDismemberment: RouteType = {
   title: "Desmembramento",

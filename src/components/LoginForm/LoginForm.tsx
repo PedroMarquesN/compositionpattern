@@ -2,7 +2,12 @@ import React, { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IFormInput, IRegisterFormInput } from "../../@types/LoginForm";
 import { useNavigate } from "react-router-dom";
-import { ContainerLogin, DivContainer, FormContainer, StyledSelect } from "./styles";
+import {
+  ContainerLogin,
+  DivContainer,
+  FormContainer,
+  StyledSelect,
+} from "./styles";
 import NewFormImg from "./ImageForm";
 import Logo from "./Logo";
 import Input from "./Input";
@@ -18,10 +23,8 @@ export const roles = [
 
 export type RoleOption = (typeof roles)[number]["value"];
 
-
-
 const API_URL = "http://localhost:8080/api/users";
-const API_LOGIN = "http://localhost:8080/api/auth/login"
+const API_LOGIN = "http://localhost:8080/api/auth/login";
 
 const LoginForm: FC = () => {
   const {
@@ -42,9 +45,9 @@ const LoginForm: FC = () => {
         },
         body: JSON.stringify(data),
       });
-  
+
       if (response.ok) {
-        const { token, role, username } = await response.json(); 
+        const { token, role, username } = await response.json();
         localStorage.setItem("token", token);
         localStorage.setItem("role", role);
         localStorage.setItem("username", username);
@@ -125,6 +128,20 @@ const LoginForm: FC = () => {
                 type="text"
                 register={register}
                 name="username"
+                error={errors.username?.message}
+              />
+              <Input
+                label="Email:"
+                type="email"
+                register={register}
+                name="email"
+                error={errors.username?.message}
+              />{" "}
+              <Input
+                label="Telefone:"
+                type="tel"
+                register={register}
+                name="phone"
                 error={errors.username?.message}
               />
               <Input
