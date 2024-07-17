@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import { UserProvider } from './contexts/UserContext';
 import UsersList from './pages/UsersList';
 import Home from './pages/Home';
+import UserRegistrationForm from './components/RegistrationForm/UserRegistrationForm';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="panel" element={<Home />} />
             <Route path="userslist" element={<UsersList />} />
+            <Route path="register" element={<UserRegistrationForm />} />
           </Route>
         </Routes>
       </UserProvider>

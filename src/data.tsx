@@ -34,9 +34,9 @@ export const routeScheduling: RouteType = {
 };
 
 export const routeDismemberment: RouteType = {
-  title: "Desmembramento",
+  title: "Registrar",
   icon: Icon3,
-  route: "/desmembramento",
+  route: "/dashboard/register",
 };
 export const adminRoute: RouteType = {
   title: "Configuração",
