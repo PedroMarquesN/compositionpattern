@@ -23,7 +23,7 @@ export const roles = [
 
 export type RoleOption = (typeof roles)[number]["value"];
 
-const API_URL = "http://localhost:8080/api/users";
+const API_URL = "http://localhost:8080/api/users/create";
 const API_LOGIN = "http://localhost:8080/api/auth/login";
 
 const LoginForm: FC = () => {

@@ -12,7 +12,6 @@ export interface ButtonProps {
   height?: string;
   fontSize?: string;
   fontFamily?: string;
-
 }
 
 const Button: React.FC<ButtonProps> & {

@@ -33,10 +33,15 @@ export const routeScheduling: RouteType = {
   route: "/dashboard/userslist",
 };
 
-export const routeDismemberment: RouteType = {
+export const routeCreateUser: RouteType = {
   title: "Registrar",
   icon: Icon3,
   route: "/dashboard/register",
+};
+export const routeDismemberment: RouteType = {
+  title: "Desmembramento",
+  icon: Icon3,
+  route: "/desmembramento",
 };
 export const adminRoute: RouteType = {
   title: "Configuração",
@@ -48,6 +53,7 @@ export const administratorRoutes: RouteType[] = [
   routeScheduling,
   adminRoute,
   routeDismemberment,
+  routeCreateUser,
 ];
 export const clientRoutes: RouteType[] = [routeScheduling];
 export const operatorRoutes: RouteType[] = [routeDismemberment, routeScheduling];

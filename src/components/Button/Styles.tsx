@@ -22,26 +22,27 @@ export const Text = styled.span<TextProps>`
 export const StyledButton = styled.button<StyledButtonProps>`
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
-
-
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #007bff;
-  border-radius: 5px;
+  background-color: #97B43C;
+  border: none;
+  border-radius: ${({ theme }) => theme.radius[1]};
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
   outline: none;
-  position: relative;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #718531;
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(98, 156, 103, 0.5);
   }
 
   flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};

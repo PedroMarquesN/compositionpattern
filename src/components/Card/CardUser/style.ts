@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+
 
 export const CardUser = styled.div `
 
@@ -30,15 +31,18 @@ margin-bottom: 0.8rem;
     
     }
 `
+interface PerfilImgProps {
+  bgColor?: string; 
+}
 
-export const PerfilImg = styled.div`
+export const PerfilImg = styled.div<PerfilImgProps>`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 9.25rem;
     height: 9.1875rem;
     border-radius: 50%;
-    background-color: #C4C4C4;
+    background-color: ${(props) => props.bgColor || '#C4C4C4'};
 `
 
 
