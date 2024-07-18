@@ -1,47 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Input from "../LoginForm/Input";
-import { roles } from "../LoginForm/LoginForm";
-import ButtonForm from "../LoginForm/Button";
+import Input from "../Input";
+import { roles } from "../LoginForm";
+import ButtonForm from "../Button";
 import { useNavigate } from "react-router-dom";
-import { StyledSelect } from "../LoginForm/styles";
+import { FormContainer, StyledSelect } from "../styles";
+import { IRegisterFormInput } from "../../../@types/Forms/RegisterUser";
 
-export interface IRegisterFormInput {
-  username: string;
-  email: string;
-  phone: string;
-  password: string;
-  role: string;
-  cnpj: string;
-}
 
 const UserRegistrationForm: React.FC = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegisterFormInput>();
-  const [cnpjs, setCnpjs] = useState<string[]>([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchCnpjs = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/api/cnpjs", {
-          headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Dados recebidos:", data);
-          setCnpjs(data);
-        } else {
-          console.error("Erro ao buscar CNPJs");
-        }
-      } catch (error) {
-        console.error("Erro ao buscar CNPJs:", error);
-      }
-    };
-
-    fetchCnpjs();
-  }, []);
 
   const onSubmit: SubmitHandler<IRegisterFormInput> = async (data) => {
     try {
@@ -72,25 +41,28 @@ const UserRegistrationForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <FormContainer onSubmit={handleSubmit(onSubmit)}>
       <Input
         label="Novo Usuário:"
         type="text"
         register={register}
         name="username"
         error={errors.username?.message}
+        showIcon={false}
       />
       <Input
         label="Email:"
         type="email"
         register={register}
         name="email"
+        showIcon={false}
       />
       <Input
         label="Telefone:"
         type="tel"
         register={register}
         name="phone"
+        showIcon={false}
       />
       <Input
         label="Nova Senha:"
@@ -98,6 +70,7 @@ const UserRegistrationForm: React.FC = () => {
         register={register}
         name="password"
         error={errors.password?.message}
+        showIcon={false}
       />
       <StyledSelect
         {...register("role" as const, { required: "Selecione um papel" })}
@@ -120,10 +93,11 @@ const UserRegistrationForm: React.FC = () => {
         register={register}
         name="cnpj"
         error={errors.cnpj?.message}
+        showIcon={false}
       />
 
       <ButtonForm type="submit">Criar Conta</ButtonForm>
-    </form>
+    </FormContainer>
   );
 };
 

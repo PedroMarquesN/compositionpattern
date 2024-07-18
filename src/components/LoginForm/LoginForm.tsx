@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormInput, IRegisterFormInput } from "../../@types/LoginForm";
+import { IFormInput, IRegisterFormInput } from "../../@types/Forms/LoginForm";
 import { useNavigate } from "react-router-dom";
 import {
   ContainerLogin,

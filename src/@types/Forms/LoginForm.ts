@@ -6,6 +6,7 @@ export interface InputProps {
     register: any
     name: string
     error?: string
+    showIcon?: boolean
 }
 export interface ButtonFormProps {
     type: 'submit' | 'button' | 'reset'

@@ -25,7 +25,7 @@ export const ImageContainer = styled.div`
     height: 100vh;
     border-radius: 5rem;
     overflow: hidden; 
-    padding: 20px; // Mova o padding para aqui
+    padding: 20px; 
 `;
 
 export const FormImg = styled.img`
@@ -52,7 +52,7 @@ export const InputContainer = styled.div`
     width: 30.6875rem;
     height: 3.6rem;
     border-radius: 0.25rem;
-    background: #F4F4F4;
+    background: #E0E0E0;
     border: none;
     border-radius: 0.25rem;
     color: #606060; 

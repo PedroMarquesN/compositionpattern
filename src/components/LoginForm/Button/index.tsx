@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ButtonFormProps } from "../../../@types/LoginForm";
+import { ButtonFormProps } from "../../../@types/Forms/LoginForm";
 import { StyledButtonForm } from "../styles";
 
 const ButtonForm: FC<ButtonFormProps> = ({type, children, onClick}) => {

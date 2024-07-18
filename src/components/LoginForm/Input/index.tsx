@@ -1,26 +1,23 @@
 import { FC } from "react";
-import { InputProps } from "../../../@types/LoginForm";
+import { InputProps } from "../../../@types/Forms/LoginForm";
 import { InputContainer } from "../styles";
 import { FaEye, FaUser } from "react-icons/fa";
 
-const Input: FC<InputProps> & {
-    Icon:FC <{ type:string }>
-} = ({label , type , register , name , error}) => {
+const Input: FC<InputProps> = ({ label, type, register, name, error, showIcon = true }) => {
+    const shouldShowIcon = showIcon && (type === 'text' || type === 'password');
+  
     return (
-        <InputContainer>
+      <InputContainer>
         <label>{label}</label>
-        <input {...register(name,{required:`${label} Campo Obrigatório !`})}type={type} />
+        <input
+          {...register(name, { required: `${label} Campo Obrigatório!` })}
+          type={type}
+        />
         {error && <p>{error}</p>}
-        {type === 'text' && <FaUser/>}
-        {type === 'password' && <FaEye />}
-        </InputContainer>
-    )
-}
-
-Input.Icon = ({type}) => {
-    if (type  === 'text') return <FaUser />
-    if (type  === 'password') return <FaEye />
-    return null
-}
+        {shouldShowIcon && type === 'text' && <FaUser />}
+        {shouldShowIcon && type === 'password' && <FaEye />}
+      </InputContainer>
+    );
+  };
 
 export default Input;

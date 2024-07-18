@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, UserCard, UserCardContainer } from "./styles";
-import { User } from "../@types/Users";
+import { Container, UserCard, UserCardContainer } from "../../styles";
+import { User } from "../../../@types/Users";
 
 const API_URL = "http://localhost:8080/api/users";
 
