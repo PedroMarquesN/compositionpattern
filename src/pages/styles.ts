@@ -19,7 +19,7 @@ export const Title  = styled.h1`
   margin-bottom: 20px;
 `;
 
-export const UserCard = styled.div`
+export const UserCardStyles = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -32,4 +32,37 @@ export const UserCard = styled.div`
   height: 132px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
+`;
+export const UserInfo = styled.div`
+  margin-bottom: 10px;
+
+  h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+`;
+
+export const Info = styled.div`
+  margin-bottom: 10px;
+
+  h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    margin-bottom: 5px;
+  }
 `;
