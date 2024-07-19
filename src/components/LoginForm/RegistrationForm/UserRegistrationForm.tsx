@@ -6,35 +6,18 @@ import ButtonForm from "../Button";
 import { useNavigate } from "react-router-dom";
 import { FormContainer, StyledSelect } from "../styles";
 import { IRegisterFormInput } from "../../../@types/Forms/RegisterUser";
+import { registerUserDashboard } from "../../../api/userService";
 
 
 const UserRegistrationForm: React.FC = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegisterFormInput>();
+  const { register, handleSubmit, formState: { errors } } = useForm<IRegisterFormInput>();
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<IRegisterFormInput> = async (data) => {
     try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        navigate("/");
-        return;
-      }
-
-      const response = await fetch("http://localhost:8080/api/users/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        console.log("Usuário registrado com sucesso!");
-       navigate('/dashboard/panel');
-      } else {
-        console.error("Erro ao registrar usuário");
-      }
+      const response = await registerUserDashboard(data);
+      console.log("Usuário registrado com sucesso!", response);
+      navigate('/dashboard/panel');
     } catch (error) {
       console.error("Erro ao registrar usuário:", error);
     }

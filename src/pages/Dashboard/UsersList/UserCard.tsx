@@ -7,6 +7,7 @@ import { UserInfo1 } from "./UserInfo";
 import { User } from "../../../@types/Users";
 import EditUserModal from "./EditUserModal";
 import axios from "axios";
+import { updateUser } from "../../../api/userService";
 
 
 
@@ -16,15 +17,16 @@ const UserCard1 = ({ user }: { user: User }) => {
   const handleOpen = () => setSelected(true);
   const handleClose = () => setSelected(false);
 
-   const handleSubmit = async (data: User) => {
-    try {
-      const response = await axios.put(`http://localhost:8080/api/users/${user.id}`, data);
-      console.log("Usuário atualizado:", response.data);
-      handleClose();
-    } catch (error) {
-      console.error("Erro ao atualizar usuário:", error);
+  const handleSubmit = async (data: User) => {
+    if (user.id) 
+      try {
+        const response = await updateUser(user.id, data); 
+        handleClose();
+      } catch (error) {
+        console.error("Erro ao atualizar usuário:", error);
+      }
     }
-  };
+  
 
   return (
     <>

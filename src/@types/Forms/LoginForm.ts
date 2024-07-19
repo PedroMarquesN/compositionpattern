@@ -19,10 +19,6 @@ export interface IFormInput {
     username: string
     password: string
 }
-export interface IRegisterFormInput  extends IFormInput{
-    role: string
-}
-
 
 export interface LoginFormProps{
     username: string

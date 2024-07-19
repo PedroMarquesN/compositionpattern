@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormInput, IRegisterFormInput } from "../../@types/Forms/LoginForm";
+import { IFormInput } from "../../@types/Forms/LoginForm";
 import { useNavigate } from "react-router-dom";
 import {
   ContainerLogin,
@@ -12,7 +12,8 @@ import NewFormImg from "./ImageForm";
 import Logo from "./Logo";
 import Input from "./Input";
 import ButtonForm from "./Button";
-import styled from "styled-components";
+import { loginUser, registerUser } from "../../api/userService";
+import { IRegisterFormInput } from "../../@types/Forms/RegisterUser";
 
 export const roles = [
   { value: "Admin", label: "Administrador" },
@@ -23,7 +24,7 @@ export const roles = [
 
 export type RoleOption = (typeof roles)[number]["value"];
 
-const API_URL = "http://localhost:8080/api/users/create";
+const API_URL_CREATE = "http://localhost:8080/api/users/create";
 const API_LOGIN = "http://localhost:8080/api/auth/login";
 
 const LoginForm: FC = () => {
@@ -38,23 +39,11 @@ const LoginForm: FC = () => {
 
   const onSubmitLogin: SubmitHandler<IFormInput> = async (data) => {
     try {
-      const response = await fetch(API_LOGIN, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const { token, role, username } = await response.json();
-        localStorage.setItem("token", token);
-        localStorage.setItem("role", role);
-        localStorage.setItem("username", username);
-        navigate("/dashboard/panel");
-      } else {
-        console.error("Erro ao fazer login");
-      }
+      const { token, role, username } = await loginUser(data);
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+      localStorage.setItem("username", username);
+      navigate("/dashboard/panel");
     } catch (error) {
       console.error("Erro ao fazer login:", error);
     }
@@ -62,20 +51,9 @@ const LoginForm: FC = () => {
 
   const onSubmitRegister: SubmitHandler<IRegisterFormInput> = async (data) => {
     try {
-      const response = await fetch(`${API_URL}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        console.log("Usuário registrado com sucesso!");
-        navigate(0);
-      } else {
-        console.error("Erro ao registrar usuário");
-      }
+      await registerUser(data);
+      console.log("Usuário registrado com sucesso!");
+      navigate(0);
     } catch (error) {
       console.error("Erro ao registrar usuário:", error);
     }
