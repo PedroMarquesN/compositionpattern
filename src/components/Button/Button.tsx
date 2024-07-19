@@ -12,13 +12,14 @@ export interface ButtonProps {
   height?: string;
   fontSize?: string;
   fontFamily?: string;
+  selected?: boolean;
 }
 
 const Button: React.FC<ButtonProps> & {
   Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>;
   Text: React.FC<{ fontSize?:string, fontFamily?:string, children: React.ReactNode }>;
   Tooltip: React.FC<{ children: React.ReactNode }>;
-} = ({ reverse, onClick, children, width, height, fontSize }) => {
+} = ({ reverse, onClick, children, width, height, fontSize, selected }) => {
   return (
     <StyledButton
       onClick={onClick}
@@ -26,6 +27,8 @@ const Button: React.FC<ButtonProps> & {
       width={width}
       height={height}
       fontSize={fontSize}
+      selected={selected}
+      
     >
       {children}
     </StyledButton>

@@ -6,6 +6,7 @@ interface StyledButtonProps {
   height?: string;
   fontSize?: string;
   fontFamily?: string;
+  selected?: boolean;
 }
 
 interface TextProps {
@@ -29,7 +30,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #97B43C;
+  background-color: ${({ selected }) => (selected ? '#fff' : '#97B43C')};
   border: none;
   border-radius: ${({ theme }) => theme.radius[1]};
   color: #fff;

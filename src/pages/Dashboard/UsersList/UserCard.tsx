@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { UserCardStyles} from "../../styles";
 import UserIcon, { EditIcon } from "../../../assets/icons";
-import { ImageUser, PerfilImg } from "../../../components/Card/CardUser/style";
+import { PerfilImg } from "../../../components/Card/CardUser/style";
 import Button from "../../../components/Button/Button";
-import ImageUserAsset from "../../../assets/Vector.png";
 import { UserInfo1 } from "./UserInfo";
 import { User } from "../../../@types/Users";
-
 import EditUserModal from "./EditUserModal";
+import axios from "axios";
 
 
 
@@ -16,6 +15,16 @@ const UserCard1 = ({ user }: { user: User }) => {
 
   const handleOpen = () => setSelected(true);
   const handleClose = () => setSelected(false);
+
+   const handleSubmit = async (data: User) => {
+    try {
+      const response = await axios.put(`http://localhost:8080/api/users/${user.id}`, data);
+      console.log("Usuário atualizado:", response.data);
+      handleClose();
+    } catch (error) {
+      console.error("Erro ao atualizar usuário:", error);
+    }
+  };
 
   return (
     <>
@@ -31,11 +40,11 @@ const UserCard1 = ({ user }: { user: User }) => {
           <UserInfo1 label="Telefone" selected={selected} value={user.phone || "N/A"} />
           <UserInfo1 label="Perfil de acesso" selected={selected} value={user.role || "N/A"} />
         </div>
-        <Button onClick={handleOpen}>
-          <EditIcon />
+        <Button onClick={handleOpen} selected={selected}>
+          <EditIcon color={selected ? "#97B43C" : "#fff"}/>
         </Button>
       </UserCardStyles>
-      <EditUserModal open={selected} onClose={handleClose} />
+      <EditUserModal open={selected} onClose={handleClose} onSubmit={handleSubmit} user={user}/>
     </>
   );
 };
