@@ -33,6 +33,7 @@ margin-bottom: 0.8rem;
 `
 interface PerfilImgProps {
   bgColor?: string; 
+  selected?: boolean;
 }
 
 export const PerfilImg = styled.div<PerfilImgProps>`
@@ -42,7 +43,7 @@ export const PerfilImg = styled.div<PerfilImgProps>`
     width: 9.25rem;
     height: 9.1875rem;
     border-radius: 50%;
-    background-color: ${(props) => props.bgColor || '#C4C4C4'};
+    background-color: ${(props) => (props.selected ? "#FFFFFF" : props.bgColor || "#C4C4C4")};
 `
 
 

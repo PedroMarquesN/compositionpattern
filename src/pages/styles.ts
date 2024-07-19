@@ -19,12 +19,15 @@ export const Title  = styled.h1`
   margin-bottom: 20px;
 `;
 
-export const UserCardStyles = styled.div`
+export interface UserCardStylesProps {
+  selected: boolean;
+}
+export const UserCardStyles = styled.div<UserCardStylesProps>`
   position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: #fff;
+  background-color: ${props => props.selected ? '#97B43C' : '#fff'};
   border-radius: 4px;
   border: 3px solid #97B43C;
   padding: 20px;
@@ -33,36 +36,20 @@ export const UserCardStyles = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
 `;
-export const UserInfo = styled.div`
+export const Info = styled.div<UserCardStylesProps>`
   margin-bottom: 10px;
 
   h3 {
     font-size: 1rem;
-    color: #333;
+    color: ${props => props.selected ? '#fff' : '#555'};
     margin: 0;
   }
 
   p {
     font-size: 0.9rem;
-    color: #555;
+    color: ${props => props.selected ? '#fff' : '#555'};
     margin: 0;
     margin-bottom: 5px;
   }
 `;
 
-export const Info = styled.div`
-  margin-bottom: 10px;
-
-  h3 {
-    font-size: 1rem;
-    color: #333;
-    margin: 0;
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0;
-    margin-bottom: 5px;
-  }
-`;
