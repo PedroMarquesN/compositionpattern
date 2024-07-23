@@ -9,15 +9,24 @@ const API_URL = "http://localhost:8080/api/users";
 const UsersList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(API_URL);
-        setUsers(response.data);
-        setLoading(false);
+        const fetchedUsers = response.data;
+
+        if (Array.isArray(fetchedUsers)) {
+          setUsers(fetchedUsers);
+        } else {
+          console.error("API response is not an array:", fetchedUsers);
+          setError("Error fetching users");
+        }
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
+        console.error("Error fetching users:", error);
+        setError("Error fetching users");
+      } finally {
         setLoading(false);
       }
     };
@@ -29,13 +38,19 @@ const UsersList: React.FC = () => {
     return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
     <Container>
-      <Title>Listagem de usuários</Title>
+      <Title>User Listing</Title>
       <UserCardContainer>
-        {users.map((user) => (
-        <UserCard1 key={user.id} user={user}  />
-        ))}
+        {users.length > 0 ? (
+          users.map((user) => <UserCard1 key={user.id} user={user} />)
+        ) : (
+          <div>No users found</div>
+        )}
       </UserCardContainer>
     </Container>
   );

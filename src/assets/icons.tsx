@@ -1,4 +1,23 @@
-export const EditIcon: React.FC<UserIconProps> = ({color}) => (
+interface UserIconProps {
+  color: string;
+}
+
+export const ContractIcon: React.FC<UserIconProps> = ({ color }) => (
+  <svg
+    width="18"
+    height="23"
+    viewBox="0 0 18 23"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.31764 22.944H14.6824C16.8978 22.944 18 21.8204 18 19.5944V9.87758H10.252C8.8822 9.87758 8.24022 9.22464 8.24022 7.85485V0H3.31764C1.11319 0 0 1.13419 0 3.36056V19.5944C0 21.8309 1.11319 22.944 3.31764 22.944ZM10.2844 8.41145H17.8822C17.8073 7.97265 17.4968 7.54437 16.9941 7.02019L11.0867 1.01684C10.5944 0.503171 10.1451 0.192684 9.6954 0.117346V7.83385C9.6954 8.21876 9.89904 8.41145 10.2844 8.41145Z"
+      fill="#1C4724"
+    />
+  </svg>
+);
+
+export const EditIcon: React.FC<UserIconProps> = ({ color }) => (
   <svg
     width="22"
     height="21"
@@ -12,10 +31,6 @@ export const EditIcon: React.FC<UserIconProps> = ({color}) => (
     />
   </svg>
 );
-
-interface UserIconProps {
-  color: string;
-}
 
 const UserIcon: React.FC<UserIconProps> = ({ color }) => (
   <svg

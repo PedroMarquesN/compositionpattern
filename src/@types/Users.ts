@@ -9,6 +9,7 @@ export interface CardUserContainerProps {
 export interface User {
     id?: number;
     username: string;
+    name: string;
     role: string;
     email?: string;
     phone?: string;

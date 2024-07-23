@@ -83,7 +83,7 @@ const EditUserModal: React.FC<EditUserModalProps> = ({ open, onClose, user, onSu
 
     <ButtonForm type="submit">Atualizar</ButtonForm>
   </FormContainer>
-      <Button onClick={onClose}>Fechar</Button>
+      <Button top="10px" right="10px" onClick={onClose}>Fechar</Button>
     </ModalContent>
   </Modal>
   )

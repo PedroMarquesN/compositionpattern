@@ -7,6 +7,8 @@ interface StyledButtonProps {
   fontSize?: string;
   fontFamily?: string;
   selected?: boolean;
+  top?: string;
+  right?: string;
 }
 
 interface TextProps {
@@ -24,8 +26,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: ${props => props.top || 'auto'}; 
+  right: ${props => props.right || 'auto'}; 
   display: flex;
   align-items: center;
   justify-content: center;

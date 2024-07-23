@@ -26,11 +26,18 @@ const UserRegistrationForm: React.FC = () => {
   return (
     <FormContainer onSubmit={handleSubmit(onSubmit)}>
       <Input
-        label="Novo Usuário:"
+        label="Nome de Usuário:"
         type="text"
         register={register}
         name="username"
         error={errors.username?.message}
+        showIcon={false}
+      />
+            <Input
+        label="Nome Completo"
+        type="text"
+        register={register}
+        name="name"
         showIcon={false}
       />
       <Input

@@ -44,7 +44,7 @@ export const PerfilImg = styled.div<PerfilImgProps>`
     height: 9.1875rem;
     border-radius: 50%;
     background-color: ${(props) => (props.selected ? "#FFFFFF" : props.bgColor || "#C4C4C4")};
-`
+`;
 
 
 export const ImageUser = styled.img `
